@@ -1,0 +1,87 @@
+<div class="shop-section">
+    <div class="container">
+        <div class="row flex-column-reverse flex-lg-row">
+            <div class="col-lg-9">
+                <!-- Start Shop Product Sorting Section -->
+
+               <!-- Start Tab Wrapper -->
+                <div class="sort-product-tab-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <d  iv class="col-12">
+                                <div class="tab-content tab-animate-zoom">
+                                    <!-- Start Grid View Product -->
+                                    
+                                    <!-- Start List View Product -->
+                                    <div class="tab-pane active show sort-layout-single" id="layout-list">
+                                        <div class="row">
+                                         <% orderItems.forEach(function(orderItems) { %> 
+                                                   
+                                            <div class="col-12">
+                                                <!-- Start Product Defautlt Single -->
+                                                <div class="product-list-single product-color--green"
+                                                    data-aos="fade-up" data-aos-delay="0">
+                                                    <a href="product-details-default.html"
+                                                        class="product-list-img-link">
+                                                        <img class="img-fluid " style="width:180px ;height:20   0px ;"
+                                                            src="<%=orderItems.product.imageurl%>"
+                                                            alt="">
+                                                        <img class="img-fluid"
+                                                            src="<%=orderItems.product.imageurl%>   "
+                                                            alt="">
+                                                    </a>
+                                                    <div class="product-list-content">
+                                                        <h5 class="product-list-link"><a
+                                                                href="product-details-default.html"><%=orderItems.product.name%>
+                                                                </a></h5>
+                                                        <ul class="review-star">
+                                                            <li class="fill"><i class="ion-android-star"></i></li>
+                                                            <li class="fill"><i class="ion-android-star"></i></li>
+                                                            <li class="fill"><i class="ion-android-star"></i></li>
+                                                            <li class="fill"><i class="ion-android-star"></i></li>
+                                                            <li class="empty"><i class="ion-android-star"></i></li>
+                                                        </ul>
+                                                        <span class="product-list-price"><del>$ <%=orderItems.product.offer%></del>
+                                                            $<%=orderItems.product.price%></span>
+                                                        <h6> Quantity : <%=orderItems.quantity%> </h6>
+                                                        <div class="product-action-icon-link-list">
+                                                            <a href="#" data-bs-toggle="modal"
+                                                                data-bs-target="#modalAddcart"
+                                                                class="btn btn-lg btn-green">Add to
+                                                                cart</a>
+                                                            <a href="#" data-bs-toggle="modal"
+                                                                data-bs-target="#modalQuickview"
+                                                                class="btn btn-lg btn-green"><i
+                                                                    class="icon-magnifier"></i></a>
+                                                            <a href="wishlist.html"
+                                                                class="btn btn-lg btn-green"><i
+                                                                    class="icon-heart"></i></a>
+                                                            <a href="compare.html"
+                                                                class="btn btn-lg btn-green"><i
+                                                                    class="icon-bag"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- End Product Defautlt Single -->
+                                            </div>
+                                         <% })%>
+                                        </div>
+                                    </div> <!-- End List View Product -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Tab Wrapper -->
+
+                <!-- Start Pagination -->
+                <div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                    <ul>
+                        <li><a class="active" href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#"><i class="ion-ios-skipforward"></i></a></li>
+                    </ul>
+                </div> <!-- End Pagination -->
+            </div> <!-- End Shop Product Sorting Section  -->
+        </div>
+    </div>
+</div> <!-- ...:::: End Shop Section:::... -->

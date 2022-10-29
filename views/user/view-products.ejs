@@ -1,0 +1,100 @@
+<div class="shop-section">
+    <div class="container ">
+        <div class="row flex-column-reverse flex-lg-row ">
+            <div class="col-lg-12">
+
+                <!-- Start Tab Wrapper -->
+                <div class="sort-product-tab-wrapper ">
+                    <div class="container ">
+                        <div class="row ">
+                           
+                            <div class="col-12  ">
+                                <div class="tab-content ">
+                                  
+                                    <!-- Start Grid View Product -->
+                                    <div class="tab-pane active show sort-layout-single " id="layout-4-grid">
+                                        <div class="row">
+                                            <% product.forEach(function(product){ %>
+                                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12 ">
+
+
+                                                <!-- ============ -->
+                                               
+                                                    <!-- Start Product Default Single Item -->
+                                                    <div class="product-default-single-item product-color--green "
+                                                        data-aos="fade-up" data-aos-delay="0">
+                                                        <div class="image-box">
+                                                            <a href="/singleproductview/<%=product._id %> "class="image-link">
+                                                                <img src="<%=product.imageurl %>"
+                                                                    alt="">
+                                                                <img src="<%=product.imageurl2 %>"
+                                                                    alt="">
+                                                            </a>
+                                                            <div class="action-link">
+                                                                <div class="action-link-left">
+                                                                    <a href="" data-bs-toggle="modal"
+                                                                        data-bs-target="">Buy Now</a>
+                                                                </div>
+                                                                <div class="action-link-right"> 
+                                                                    <a href="/add-to-wishlist/<%= product._id %>"><i
+                                                                            class="icon-heart"></i></a>
+                                                                    <a href="/add-to-cart/<%= product._id %>/<%= product.price %> "><i
+                                                                            class="icon-bag"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content">
+                                                            <div class="content-left">
+                                                                <h6 class="title"><a
+                                                                        href="product-details-default.html"><%=product.name %>
+                                                                        </a></h6>
+                                                                <ul class="review-star">
+                                                                    <li class="fill"><i class="ion-android-star"></i>
+                                                                    </li>
+                                                                    <li class="fill"><i class="ion-android-star"></i>
+                                                                    </li>
+                                                                    <li class="fill"><i class="ion-android-star"></i>
+                                                                    </li>
+                                                                    <li class="fill"><i class="ion-android-star"></i>
+                                                                    </li>
+                                                                    <li class="empty"><i class="ion-android-star"></i>
+                                                                    </li>
+                                                                </ul>
+                                                                
+                                                            </div>
+                                            
+                                                            <div class="content-right"> 
+                                                                <span class="price" style="color: green; font-weight:bolder; font-size:large;">&#x20B9; <%=product.price%></span><br>
+                                                                <span class="price "><%=product.offer %></span>
+                                                                <span class="price" style="color:black ;"><del>&#x20B9;70.00</del></span>
+
+                                                               
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- End Product Default Single Item -->
+                                                  
+                                                        <!-- End Product Default Single Item -->
+
+
+                                                        <!-- ============= -->
+                                            </div>
+                                            <% }); %>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- End List View Product -->
+                                 
+                                </div>
+                            </div>
+                       
+                        </div>
+                    </div>
+                </div> <!-- End Tab Wrapper -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

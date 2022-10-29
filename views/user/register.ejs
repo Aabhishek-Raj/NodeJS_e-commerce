@@ -1,0 +1,208 @@
+ 
+    <!-- ...:::: Start Breadcrumb Section:::... -->
+    <div class="breadcrumb-section breadcrumb-bg-color--golden">
+        <div class="breadcrumb-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="breadcrumb-title">Register</h3>
+                        <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+                            <nav aria-label="breadcrumb">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
+                                    <li class="active" aria-current="page">Login</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- ...:::: End Breadcrumb Section:::... -->
+
+ 
+ 
+ <!-- ...:::: Start Customer Login Section :::... -->   
+ <div class="customer-login">
+    <div class="container">
+        <div class="row">
+               <!--register area start-->
+               <div class="col-lg-6 col-md-6">
+                <div class="account_form register" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Register</h3>
+                    <form id="signupform">
+                        <div class="default-form-box">
+                            <label>Enter your Name <span>*</span></label>
+                            <input type="text" name="username">
+                            <div class="username error"></div>
+                        </div>
+                        <div class="default-form-box">
+                            <label>Phone Number<span>*</span></label>
+                            <input type="text" name="phoneNo">
+                            <div class="phoneNo error"> </div>
+                        </div>
+                        <div class="default-form-box">
+                            <label>Email ID <span>*</span></label>
+                            <input type="text" name="email">
+                            <div class="email error"></div>
+                        </div>
+                        <div class="default-form-box">
+                            <label>Password <span>*</span></label>
+                            <input type="password" name="password">
+                            <div class="password error"></div>
+                        </div>
+                        <div class="login_submit">
+                            <button id="subbtn" class="btn btn-md btn-black-default-hover" type="submit">Register</button>
+                        </div>
+                    </form>
+                    <a href="/login">Already have an account</a>
+                </div>
+            </div>
+            <!--register area end-->
+
+            <!-- otp login form -->
+            <form id="otp" style="display:none;" class="col-md-6 px-5">
+                <div class="form-group">
+              
+                  <input type="text" class="form-control" id="otpinp" placeholder="" name="otpvalue">
+                  <label class="mb-2 mt-2">Enter the OTP</label>
+              
+                </div>
+              
+                <div class="text-center">
+                  <a href="#myModal" class="btn btn-md btn-black-default-hover" data-toggle="modal" id="otpbtn">Verify</a>
+                </div>
+            </form>
+            <!-- otp login end -->
+        </div>
+    </div>
+</div> <!-- ...:::: End Customer Login Section :::... -->
+
+<!-- modal -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <div class="icon-box">
+          <i class="material-icons"></i>
+        </div> -->
+        </div>
+        <div class="modal-body">
+          <p class="text-center responsetext h5"></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div> 
+</div>
+<!-- modal end -->
+
+<script>
+    const form = document.querySelector('#signupform')
+    const btn = document.getElementById('subbtn')
+    const otpform = document.getElementById('otp')
+    const otpbtn = document.getElementById('otpbtn')
+
+    btn.addEventListener('click', async (e) => {
+        e.preventDefault()
+
+        const usernameError = document.querySelector(".username.error")
+        const phoneNoError = document.querySelector(".phoneNo.error")
+        const emailError = document.querySelector(".email.error")
+        const passwordError = document.querySelector(".password.error")
+
+
+
+        //Reset Errors
+        usernameError.textContent = ""
+        emailError.textContent = ""
+        phoneNoError.textContent = ""
+        passwordError.textContent = ""
+
+
+        //get values
+        const username = form.username.value
+        const phoneNo = form.phoneNo.value
+        const email = form.email.value
+        const password = form.password.value 
+    
+        
+
+        try{
+            const result = await fetch('/signup', {
+                method : 'post',
+                body : JSON.stringify({username, phoneNo, email, password, }),    
+                headers : { 'Content-Type' : 'application/json'}
+            })
+            const data = await result.json()
+            console.log(data);
+            console.log("hi");
+            if(data.errors){
+                console.log(data.errors);
+    
+                console.log(data.errors.username)   
+                usernameError.textContent = data.errors.username  
+                phoneNoError.textContent = data.errors.phoneNo
+                emailError.textContent = data.errors.email
+                passwordError.textContent = data.errors.password
+                
+
+            } 
+            if (data.user){
+                const phoneNo = data.user.phoneNo
+                console.log(phoneNo);
+                const response = await fetch('/sendnotification', {
+                    method: 'POST',    
+                    body: JSON.stringify({phoneNo}),
+                    headers: { 'Content-Type': 'application/json' }
+
+                }).catch(e => console.log(e))
+                
+                if (response.ok) {
+          form.style.display = 'none'
+          otpform.style.display = 'block'
+        }
+                otpbtn.addEventListener('click', async (e) => {
+                    e.preventDefault()
+
+                    const otpInpValue = otpform.otpvalue.value;
+                    const responsetext = document.querySelector('.responsetext')
+
+
+                    const otpData = {
+                        phoneNo: data.user.phoneNo,
+                        username:data.user.username,
+                        otp: otpInpValue
+                    };
+                     try {
+            const response = await fetch('/verify-otp', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(otpData)
+            })
+            console.log('hii');
+            const check = await response.json()
+            console.log(check+'hai');
+
+            responsetext.textContent=check;
+            console.log(check);
+            console.log('after assigning check');
+            otpform.style.display = 'none';
+        
+
+            setTimeout(() => {
+              location.assign('/')
+            }, 3000);
+
+
+          } catch { (e => console.log(e)) }
+            })
+        }
+        }
+        catch(err){
+            console.log(err);
+        }
+     })
+</script>

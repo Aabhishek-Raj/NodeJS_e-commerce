@@ -1,0 +1,76 @@
+
+    <!-- ...:::: Start Breadcrumb Section:::... -->
+    <div class="breadcrumb-section breadcrumb-bg-color--golden">
+        <div class="breadcrumb-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="breadcrumb-title">In Shop</h3>
+                        <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+                            <nav aria-label="breadcrumb">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
+                                    <li class="active" aria-current="page">Wishlist</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- ...:::: End Breadcrumb Section:::... -->
+
+    <!-- ...:::: Start Wishlist Section:::... -->
+    <div class="wishlist-section">
+        <!-- Start Cart Table -->
+        <div class="wishlish-table-wrapper" data-aos="fade-up" data-aos-delay="0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table_desc">
+                            <div class="table_page table-responsive">
+                                <table>
+                                    <!-- Start Wishlist Table Head -->
+                                    <thead>
+                                        <tr>
+                                            <th class="product_stock">S.No</th>
+                                            <th class="product_name">Customers</th>
+                                            <th class="product-price">Email Id</th>
+                                            <th class="product_stock">Mobile Number</th>
+                                            <th class="product_stock">Block / Unblock</th>
+                                        </tr>
+                                    </thead> <!-- End Cart Table Head -->
+                                    <tbody>
+                                        <!-- Start Wishlist Single Item-->
+                                        <% user.forEach(function(user, index){ %>    
+                                        <tr>
+                                           
+                                           
+                                            <td class="product_stock"><%=index+1 %></td>
+                                            <td class="product_stock"><%=user.username %></td>
+                                            <td class="product_stock"><%=user.email %></td>
+                                            <td class="product_stock"><%=user.phoneNo %></td>
+
+                                            <% if( user.isBlocked === true ) { %>
+                                            <td class="product_remove"><a href="/admin/unblockuser/<%=user._id %>"><i class="fa fa-lock  "></i></a>
+                                            </td>
+                                            <% } else { %>
+                                            <td class="product_remove"><a href="/admin/blockuser/<%=user._id %>"><i class="fa fa-unlock"></i></a>
+                                            </td>
+                                        <% } %>
+                                        </tr> <!-- End Wishlist Single Item-->
+                                        <% }); %>
+                                    </tbody>
+                                </table>
+                               
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div> <!-- End Cart Table -->
+    </div> <!-- ...:::: End Wishlist Section:::... -->

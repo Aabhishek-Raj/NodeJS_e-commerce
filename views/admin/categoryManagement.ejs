@@ -1,0 +1,62 @@
+    <!-- ...:::: Start Breadcrumb Section:::... -->
+    <div class="breadcrumb-section breadcrumb-bg-color--golden">
+        <div class="breadcrumb-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="breadcrumb-title">Category</h3>
+                        <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+                            <nav aria-label="breadcrumb">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
+                                    <li class="active" aria-current="page">Wishlist</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- ...:::: End Breadcrumb Section:::... -->
+
+<div class="container pb-5 mb-5">
+    <form action="/admin/categorymanagement/" method="post">
+        <div class="row col-md-6 px-5 pl-5 ml-5">
+            <div class="default-form-box">
+                <label><h4>Add New Category<span>*</span></h4></label>
+                <input type="text" name="category" placeholder="Enter a category name">
+            </div>
+            <div class="login_submit">
+                <button id="subbtn" class="btn btn-md btn-aqua" type="submit">Add category</button>
+            </div>
+        </div>
+    </form>  
+</div>
+
+<div class="container pt-5 mt-5">
+    <div class="row">
+        <table>
+            <!-- Start Wishlist Table Head -->
+            <thead >
+                <tr>   
+                    <th class="product_thumb ">S.No</th>
+                    <th class="product_thumb ">Category List</th>
+                    <th class="product_remove">Delete Category</th>
+                </tr>
+            </thead> <!-- End Cart Table Head -->
+            <tbody>
+                <!-- Start Wishlist Single Item-->
+                <% category.forEach((category, index) => { %>    
+                <tr>
+                    <td class="product-price"><h4><%= index + 1 %></h4></td>
+                    <td class="product-price"><h4><%=category.category %></h4></td>
+                    <td class="product_remove "><a href="/admin/deletecategory/<%=category._id%>"><i class="btn btn-md btn-aqua">Delete</i></a>
+                    </td>   
+                </tr> <!-- End Wishlist Single Item-->
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
+   

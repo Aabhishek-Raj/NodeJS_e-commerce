@@ -1,0 +1,73 @@
+
+
+
+
+ 
+ <!-- ...:::: Start Customer Login Section :::... -->
+ <div class="customer-login  mt-5">
+    <div class="container">
+        <div class="row">
+               <!--register area start-->
+               <div class=" justify-content-center">
+                <div class="account_form register" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Edit Product</h3>
+                    <form id="editform" action='/admin/editproduct' method="post">
+                        <input type="hidden" name="id" value="<%=product.id %>">
+                        <div class="default-form-box ">
+                            <label > Name of Product<span>*</span></label>
+                            <input type="text" name="name" value="<%=product.name %>">
+                        </div>
+                        <div class="default-form-box">
+                            <label>Price <span>*</span></label>
+                            <input type="text" name="price" value="<%=product.price %>">
+                        </div>
+                        <div class="default-form-box">
+                            <label>Offer <span>*</span></label>
+                            <input type="text"class="form-control" name="offer" value="<%=product.offer %>">
+                        </div>
+                        <div class="default-form-box">
+                            <label>Category <span>*</span></label>
+
+                            <select class="country_option nice-select wide" name="category" >
+                                <option selected><%=product.category%></option>
+                             <% cate.forEach(cate => { %>
+                                <option value="<%=cate.category %>"><%=cate.category %></option>
+                            <% }) %>  
+                            </select>                                                              
+                        </div>
+                        
+                        <div class="default-form-box">
+                            <label>Stock<span>*</span></label>
+                            <input type="text"class="form-control" name="stock" value="<%=product.stock %>">
+                        </div>
+                        <div class="default-form-box">
+                            <label>Image URL<span>*</span></label>
+                            <input type="text"class="form-control" name="imageurl" value="<%=product.imageurl %>">
+                        </div>
+                        <div class="default-form-box">
+                            <label>Image 2 URL<span>*</span></label>
+                            <input type="text"class="form-control" name="imageurl2" value="<%=product.imageurl2 %>">
+                        </div>
+                        <!-- <div class="default-form-box">
+                            <label for="">Image<span>*</span></label>
+                            <input type="file" class="form-control" name="image" >
+                        </div> -->
+                        <div class="default-form-box">
+                            <label>Description<span>*</span></label>
+                            <textarea name="discription" cols="30" rows="10"><%=product.description %></textarea> 
+                        </div>
+                        <div class="login_submit">
+                            <button class="btn btn-md btn-black-default-hover" type="submit">Add to Shop</button>
+                        </div> 
+                    </form>
+                </div>
+            </div> 
+            <!--register area end-->
+        </div>
+    </div>
+</div> <!-- ...:::: End Customer Login Section :::... -->
+
+
+    
+
+

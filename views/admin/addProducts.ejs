@@ -1,0 +1,161 @@
+    <!-- ...:::: Start Breadcrumb Section:::... -->
+    <div class="breadcrumb-section breadcrumb-bg-color--golden">
+        <div class="breadcrumb-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="breadcrumb-title">Add Products</h3>
+                        <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+                            <nav aria-label="breadcrumb">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
+                                    <li class="active" aria-current="page">Login</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- ...:::: End Breadcrumb Section:::... -->
+
+ 
+ 
+ <!-- ...:::: Start Customer Login Section :::... -->
+ <div class="customer-login">
+    <div class="container">
+        <div class="row">
+               <!--register area start-->
+               <div class=" justify-content-center">
+                <div class="account_form register" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Add product to Shop</h3>
+                    <form id="example-form" action="/admin/addproduct" method="post">
+                        <div class="default-form-box ">
+                            <label > Name of Product<span>*</span></label>
+                            <input type="text" name="name">
+                            <div class="username error"></div>
+                        </div>
+                        <div class="default-form-box">
+                            <label>Price <span>*</span></label>
+                            <input type="text" name="price">
+                            <div class="phoneNo error"> </div> 
+                        </div>
+                        <div class="default-form-box">
+                            <label>Offer <span>*</span></label>
+                            <input type="text"class="form-control" name="offer">
+                            <div class="email error"></div>
+                        </div>
+                       
+                        <div class="default-form-box">
+                            <label>Category <span>*</span></label>
+
+                            <select class="country_option nice-select wide" name="category" >
+                                <option selected>select category</option>
+                             <% category.forEach(category => { %>
+                                <option value="1"><%= category.category %></option>
+                            <% }) %>  
+                            </select>                                                              
+                        </div>
+          
+                        <div class="default-form-box">
+                            <label>Stock<span>*</span></label>
+                            <input type="text"class="form-control" name="stock">
+                            <div class="password error"></div>
+                        </div>
+                        <div class="default-form-box">
+                            <label>Image URL<span>*</span></label>
+                            <input type="text"class="form-control" name="imageurl">
+                            <div class="password error"></div>
+                        </div>
+                        <div class="default-form-box">
+                            <label>Image 2 URL<span>*</span></label>
+                            <input type="text"class="form-control" name="imageurl2">
+                            <div class="password error"></div>
+                        </div>
+                        <!-- <div class="default-form-box">
+                            <label for="">Image<span>*</span></label>
+                            <input type="file" class="form-control" name="image" >
+                            <div class="password error"></div>
+                        </div> -->
+                        <div class="default-form-box">
+                            <label>Discription<span>*</span></label>
+                            <textarea name="discription" cols="30" rows="10"></textarea> 
+                            <div class="password error"></div>
+                        </div>
+                        <div class="login_submit">
+                            <button class="btn btn-md btn-black-default-hover" type="submit">Add to Shop</button>
+                        </div> 
+                    </form>
+                </div>
+            </div> 
+            <!--register area end-->
+        </div>
+    </div>
+</div> <!-- ...:::: End Customer Login Section :::... -->
+
+
+
+
+<!-- 
+<script>
+
+/**
+ * Helper function for POSTing data as JSON with fetch.
+ *
+ * @param {Object} options
+ * @param {string} options.url - URL to POST data to
+ * @param {FormData} options.formData - `FormData` instance
+ * @return {Object} - Response body from URL that was POSTed to
+ */
+ async function postFormDataAsJson({ url, formData }) {
+	const plainFormData = Object.fromEntries(formData.entries());
+	const formDataJsonString = JSON.stringify(plainFormData);
+
+	const fetchOptions = {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			Accept: "application/json",
+		},
+		body: formDataJsonString,
+	};
+
+	const response = await fetch(url, fetchOptions);
+
+	if (!response.ok) {
+		const errorMessage = await response.text();
+		throw new Error(errorMessage);
+	}
+
+	return response.json();
+}
+
+/**
+ * Event handler for a form submit event.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
+ *
+ * @param {SubmitEvent} event
+ */
+async function handleFormSubmit(event) {
+	event.preventDefault();
+
+	const form = event.currentTarget;
+	const url = form.action;
+
+	try {
+		const formData = new FormData(form);
+		const responseData = await postFormDataAsJson({ url, formData });
+
+		console.log({ responseData });
+        location.assign("/admin/addproduct")
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+const exampleForm = document.getElementById("example-form");
+exampleForm.addEventListener("submit", handleFormSubmit);
+      
+  </script> -->

@@ -1,0 +1,85 @@
+ 
+ <!-- ...:::: Start Customer Login Section :::... -->
+ <div class="customer-login">
+    <div class="container">
+        <div class="row">
+               <!--register area start-->
+               <div class="col-lg-6 col-md-6">
+                <div class="account_form register" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Sign up</h3>
+                    <form id="signupform">
+                        <div class="default-form-box">
+                            <label>Admin Name <span>*</span></label>
+                            <input type="text" name="adminname">
+                            <div class="adminname error"></div>
+                        </div>
+                        <div class="default-form-box">
+                            <label>Password <span>*</span></label>
+                            <input type="password" name="password">
+                            <div class="password error"></div>
+                        </div>
+                        <div class="login_submit">
+                            <button class="btn btn-md btn-black-default-hover" type="submit">Sign Up</button>
+                        </div>
+                    </form>
+                    <a href="/admin/adminlogin">Already signed In</a>
+                </div>
+            </div>
+            <!--register area end-->
+        </div>
+    </div>
+</div> <!-- ...:::: End Customer Login Section :::... -->
+
+
+
+
+<script>
+    const form = document.querySelector('#signupform')
+
+    const adminnameError = document.querySelector(".adminname.error")
+    const passwordError = document.querySelector(".password.error")
+
+
+
+
+    form.addEventListener("submit", async (e) => { 
+        e.preventDefault()
+        console.log('houioi');
+        //Reset Errors
+        adminnameError.textContent = ""
+        passwordError.textContent = ""
+
+
+        //get values
+        const adminname = form.adminname.value
+        const password = form.password.value 
+    
+        
+
+        try{
+            const result = await fetch('/admin/adminsignup', {
+                method : 'post',
+                body : JSON.stringify({adminname, password }),    
+                headers : { 'Content-Type' : 'application/json'}
+            })
+            const data = await result.json()
+            console.log(data);
+            console.log("hi");
+            if(data.errors){
+                console.log(data.errors);
+    
+                console.log(data.errors.adminname)   
+                adminnameError.textContent = data.errors.adminname
+                passwordError.textContent = data.errors.password
+                
+
+            }
+            if (data.admin){
+                location.assign('/admin')
+            }
+        }
+        catch(err){
+            console.log(err);
+        }
+     })
+</script>
