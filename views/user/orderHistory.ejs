@@ -39,6 +39,7 @@
                                             <th class="product_name">Address</th>
                                             <th class="product-price">Price</th>
                                             <th class="product-price">Status</th>        
+                                            <th class="product_addcart">Manage</th>
                                             <th class="product_addcart">View</th>
                                         </tr>
                                     </thead> <!-- End Cart Table Head -->
@@ -48,14 +49,33 @@
                                             
                                         <tr>
                                             <td ><%=index + 1%></td>
-                                            <td class="product_stock"><%=order.createdAt%></td>
+                                            <td class="product_stock"><%=order.createdAt.toLocaleString()%></td>
                                              
                                              
                                             <td class="product_name"><%=order.deliveryDetails%></td>
-                                            <td class="product-price">$<%=order.totalamount%></td>
-                                            <td class="product_stock"><%=order.orderstatus%></td>
-                                            <td class="product_addcart"><a href="/orderproductview/<%=order._id%>" class="btn btn-md btn-green">Product
-                                                    Details</a></td>
+                                            <td class="product-price">&#x20B9; <%=order.totalamount%></td>
+                                            <% if(order.orderstatus === 'Cancelled'){ %>
+                                                <td class="product_stock" style="font-weight:bolder; color: red;"><%=order.orderstatus%></td>
+
+                                            <% } else if(order.orderstatus === 'placed'){%>
+                                                <td class="product_stock" style="font-weight:bolder; color: green;"><%=order.orderstatus%></td>
+                                            <%}else if(order.orderstatus === 'Dispatched'){%>
+                                                <td class="product_stock" style="font-weight:bolder; color: blue;"><%=order.orderstatus%></td>
+                                            <%}else if (order.orderstatus === 'Delivered'){%>
+                                                <td class="product_stock" style="font-weight:bolder;color: black;"><%=order.orderstatus%></td>
+                                             <%} else{ %>
+                                                <td class="product_stock" style="font-weight:bolder;"><%=order.orderstatus%></td>
+                                             <%}%>
+                                            
+                                             <% if (order.orderstatus === 'Delivered'){%>
+                                            <td class="product_addcart"><a href="/orderreturn/<%=order._id%>" class="btn btn-md btn-black-default-hover">Return
+                                                        </a></td>
+                                             <%} else{ %>
+                                             <td class="product_addcart"><a href="/ordercancel/<%=order._id%>" class="btn btn-md btn-green">Cancel
+                                                            </a></td>
+                                            <%}%>
+                                            <td class="product_addcart"><a href="/orderproductview/<%=order._id%>" class="btn btn-md ">Product
+                                                     Details</a></td>
 
                                         </tr> <!-- End Wishlist Single Item-->
                                         <% }); %>
@@ -68,3 +88,4 @@
             </div>
         </div> <!-- End Cart Table -->
     </div> <!-- ...:::: End Wishlist Section:::... -->
+

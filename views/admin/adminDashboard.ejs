@@ -1,0 +1,194 @@
+    <!-- ...:::: Start Breadcrumb Section:::... -->
+    <div class="breadcrumb-section breadcrumb-bg-color--golden">
+      <div class="breadcrumb-wrapper">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <h3 class="breadcrumb-title">dashboard</h3>
+                      <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+                          <nav aria-label="breadcrumb">
+                              <ul>
+                                  <li><a href="index.html">Home</a></li>
+                                  <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
+                                  <li class="active" aria-current="page">Login</li>
+                              </ul>
+                          </nav>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> <!-- ...:::: End Breadcrumb Section:::... -->
+
+
+
+
+
+<div class="container mt-5 pt-5">
+  <div class="row">
+
+    <div class="row d-flex justify-content-between">
+      <div id="myBar" style="max-width:500px;" class="col my-3"></div>
+      <div id="myPlot" style="max-width:500px" class="col my-3"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 pt-5">
+  <div class="row">
+    <div>
+      <!-- Start Cart Table -->
+      <div class="wishlish-table-wrapper" data-aos="fade-up" data-aos-delay="0">
+        <div class="container">
+            <div class="row">
+              <h3 class="breadcrumb-title">sales Report</h3>
+                <div class="col-12">
+                    <div class="table_desc">
+                        <div class="table_page table-responsive">
+                            <table id="salesReport">
+                                <!-- Start Wishlist Table Head -->
+                                <thead>
+                                    <tr>  
+                                        <th class="product_name">Product</th>
+                                        <th class="product-price">Price</th>
+                                        <th class="product_stock">Offer</th>
+                                        <th class="product_stock">category</th>
+                                        <th class="product_stock">Stock Status</th>
+                                        <th class="product_remove">Sales</th>
+                                    </tr>
+                                </thead> <!-- End Cart Table Head -->
+                                <tbody>
+                                    <!-- Start Wishlist Single Item-->
+                                    <% product.forEach(function(product){ %>    
+                                    <tr>
+                                       
+                                        
+                                        <td class="product_name"><a href="product-details-default.html"> <%=product.name %>
+                                                </a></td>
+                                        <td class="product-price"><%=product.price %></td>
+                                        <td class="product_stock"><%=product.offer %></td>
+                                        <td class="product_stock"><%=product.category %></td>
+                                        <td class="product_stock"><%=product.stock %></td>
+                                        <td class="product_stock"><%=product.sales %></td>
+
+                                    </tr> <!-- End Wishlist Single Item-->
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                           
+                        </div>
+                    
+                    </div>
+                </div>
+        </div>
+        
+    </div> <!-- End Cart Table -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+                    <!-- DataTable -->
+
+                    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+                    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+                    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+                    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+                    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    
+                    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+                    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+    
+        
+
+
+
+
+
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<script>
+
+  const tim = [' <%=timeArray%>']
+  const timeofOrders = tim[0].split(',')
+
+
+  let yArray = [<%=amountArray %>]
+  console.log(yArray)
+
+
+  let xArray = timeofOrders;
+  console.log(xArray);
+
+
+  // Define Data
+  let data = [{
+    x: xArray,
+    y: yArray,
+    mode: "line",
+    type: "scatter"
+  }];
+
+  let barData = [{
+    x: xArray,
+    y: yArray,
+    mode: "lines",
+    type: "bar"
+  }];
+
+  // Define Layout
+  let layout = {
+    xaxis: {
+      type: 'date'
+    },
+    yaxis: {
+      title: "Sales"
+    },
+    title: "Individual orders"
+  };
+
+  let barLayout = {
+    xaxis: {
+      type: 'date'
+    },
+    yaxis: {
+      title: "Sales"
+    },
+    title: "Sales"
+  };
+
+  // Display using Plotly
+  Plotly.newPlot("myPlot", data, layout);
+
+  Plotly.newPlot("myBar", barData, barLayout);
+
+
+
+
+  $(document).ready(function() {
+    $('#salesReport').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+
+
+
+</script>

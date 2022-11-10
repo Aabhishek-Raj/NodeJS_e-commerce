@@ -6,11 +6,14 @@ const productSchema = new mongoose.Schema({
     required: [true, 'please add all the details about your product']
   },
   price: {
-    type: String,
+    type: Number
+  },
+  orginalprice: {
+    type: Number,
     required: true
   },
   offer: {
-    type: String,
+    type: Number,
     required: true
   },
   category: {
@@ -18,16 +21,21 @@ const productSchema = new mongoose.Schema({
     required: true
   },
   stock: {
-    type: String,
+    type: Number,
     required: true
+  },
+  sales: {
+    type: Number,
+    default: 0
   },
   imageurl: {
-    type: String,
-    required: true
+    type: String
   },
   imageurl2: {
-    type: String,
-    required: true
+    type: String
+  },
+  imageurl3: {
+    type: String
   },
   discription: {
     type: String,

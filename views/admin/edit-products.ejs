@@ -19,11 +19,20 @@
                         </div>
                         <div class="default-form-box">
                             <label>Price <span>*</span></label>
-                            <input type="text" name="price" value="<%=product.price %>">
+                            <input type="text" name="orginalprice" value="<%=product.price %>">
                         </div>
                         <div class="default-form-box">
                             <label>Offer <span>*</span></label>
-                            <input type="text"class="form-control" name="offer" value="<%=product.offer %>">
+                            <select class="country_option nice-select wide" name="offer" >
+                                <option value="0" selected>Select an offer percentage</option>
+                                <option value="1">1%</option>
+                                <option value="2">2%</option>
+                                <option value="3">3%</option>
+                                <option value="4">4%</option>
+                                <option value="5">5%</option>
+                                <option value="10">10%</option>
+                                <option value="15">15%</option>
+                            </select> 
                         </div>
                         <div class="default-form-box">
                             <label>Category <span>*</span></label>
@@ -54,7 +63,7 @@
                         </div> -->
                         <div class="default-form-box">
                             <label>Description<span>*</span></label>
-                            <textarea name="discription" cols="30" rows="10"><%=product.description %></textarea> 
+                            <textarea name="discription" cols="30" rows="10"><%=product.discription %></textarea> 
                         </div>
                         <div class="login_submit">
                             <button class="btn btn-md btn-black-default-hover" type="submit">Add to Shop</button>

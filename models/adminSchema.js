@@ -14,6 +14,18 @@ const adminSchema = new mongoose.Schema({
     required: [true, 'Please enter a password'],
     minlength: [4, 'Password must be atlest 4 characters']
 
+  },
+  mainBanner: {
+    type: String
+  },
+  mainBanner2: {
+    type: String
+  },
+  leftBanner: {
+    type: String
+  },
+  rightBanner: {
+    type: String
   }
 })
 

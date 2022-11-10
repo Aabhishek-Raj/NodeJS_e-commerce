@@ -76,7 +76,6 @@ form.addEventListener("submit", async (e) => {
         const password = form.password.value;   
 
        try {                
-        console.log('his')
         const result = await fetch("/login", {   
             method : "post",
             body : JSON.stringify({ email, password }),

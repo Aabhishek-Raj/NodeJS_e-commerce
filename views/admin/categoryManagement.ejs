@@ -42,6 +42,9 @@
                 <tr>   
                     <th class="product_thumb ">S.No</th>
                     <th class="product_thumb ">Category List</th>
+                    <th class="product_remove">Category Offer</th>
+                    <th class="product_remove"></th>
+                    <th class="product_remove"></th>
                     <th class="product_remove">Delete Category</th>
                 </tr>
             </thead> <!-- End Cart Table Head -->
@@ -51,9 +54,34 @@
                 <tr>
                     <td class="product-price"><h4><%= index + 1 %></h4></td>
                     <td class="product-price"><h4><%=category.category %></h4></td>
-                    <td class="product_remove "><a href="/admin/deletecategory/<%=category._id%>"><i class="btn btn-md btn-aqua">Delete</i></a>
-                    </td>   
-                </tr> <!-- End Wishlist Single Item-->
+                    
+                   
+                        <form action="/admin/applycategoryoffer/<%=category._id%>" method="post">
+                            <td>  <div class="default-form-box">
+                                <select class="country_option nice-select wide" name="offer" >
+                                    <option value="0" selected>Select an offer percentage <span>*</span></option>
+                                    <option value="1">1%</option>
+                                    <option value="2">2%</option>
+                                    <option value="3">3%</option>
+                                    <option value="4">4%</option>
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="15">15%</option>
+                                </select> 
+                            </div></td> 
+                            <% if (category.offer===0){%>              
+                            <td> 
+                            <button class="btn btn-md btn-aqua" type="submit">Apply offer</button>
+                            </td> 
+                        </form>
+                        <% } else {%>
+                        <td class="product_remove "><a href="/admin/cancelcategoryoffer/<%=category._id%>"><i class="btn btn-md btn-black-default-hover">Cancel Offer</i></a>
+                        </td> 
+                     <% } %>
+                      
+                    <td class="product_remove "><a href="/admin/deletecategory/<%=category._id%>"><i class="btn btn-md btn-aqua">delete category</i></a>
+                    </td>  
+                </tr> <br><br><!-- End Wishlist Single Item-->
                 <% }); %>
             </tbody>
         </table>

@@ -31,22 +31,22 @@
                         <div class="product-large-image product-large-image-horaizontal swiper-container">
                             <div class="swiper-wrapper">
                                 <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                    <img src="<%= product.imageurl %>" alt="">
+                                    <img src="/<%=product.imageurl%>" alt="">
                                 </div>
                                 <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                    <img src="<%= product.imageurl2 %>" alt="">
+                                    <img src="/<%=product.imageurl2 %>" alt="">
                                 </div>
                                 <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                    <img src="<%= product.imageurl %>" alt="">
+                                    <img src="/<%=product.imageurl3%>" alt="">
                                 </div>
                                 <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                    <img src="<%= product.imageurl2 %>" alt="">
+                                    <img src="/<%=product.imageurl2 %>" alt="">
                                 </div>
                                 <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                    <img src="<%= product.imageurl %>" alt="">
+                                    <img src="/<%=product.imageurl %>" alt="">
                                 </div>
                                 <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-                                    <img src="<%= product.imageurl2 %>" alt="">
+                                    <img src="/<%=product.imageurl2 %>" alt="">
                                 </div>
                             </div>
                         </div>
@@ -56,27 +56,27 @@
                             class="product-image-thumb product-image-thumb-horizontal swiper-container pos-relative mt-5">
                             <div class="swiper-wrapper">
                                 <div class="product-image-thumb-single swiper-slide">
-                                    <img class="img-fluid" src="<%= product.imageurl %>"
+                                    <img class="img-fluid" src="/<%= product.imageurl%>"
                                         alt="">
                                 </div>
                                 <div class="product-image-thumb-single swiper-slide">
-                                    <img class="img-fluid" src="<%= product.imageurl2 %>"
+                                    <img class="img-fluid" src="/<%= product.imageurl2 %>"
                                         alt="">
                                 </div>
                                 <div class="product-image-thumb-single swiper-slide">
-                                    <img class="img-fluid" src="<%= product.imageurl %>"
+                                    <img class="img-fluid" src="/<%= product.imageurl3 %>"
                                         alt="">
                                 </div>
                                 <div class="product-image-thumb-single swiper-slide">
-                                    <img class="img-fluid" src="<%= product.imageurl2 %>"
+                                    <img class="img-fluid" src="/<%= product.imageurl2 %>"
                                         alt="">
                                 </div>
                                 <div class="product-image-thumb-single swiper-slide">
-                                    <img class="img-fluid" src="<%= product.imageurl %>"
+                                    <img class="img-fluid" src="/<%= product.imageurl %>"
                                         alt="">
                                 </div>
                                 <div class="product-image-thumb-single swiper-slide">
-                                    <img class="img-fluid" src="<%= product.imageurl2 %>"
+                                    <img class="img-fluid" src="/<%= product.imageurl3 %>"
                                         alt="">
                                 </div>
                             </div>
@@ -121,12 +121,12 @@
                                     <span>Quantity</span>
                                     <div class="product-variable-quantity">
                                         <input min="1" max="100" value="1" type="number">
-                                    </div>
+                                    </div>  
                                 </div>
 
                                 <div class="product-add-to-cart-btn">
-                                    <a href="#" class="btn btn-block btn-lg btn-black-green-hover"
-                                        data-bs-toggle="modal" data-bs-target="#modalAddcart">+ Add To Cart</a>
+                                    <a href="/add-to-cart/<%=product._id%>/<%=product.price%>" class="btn btn-block btn-lg btn-black-green-hover"
+                                        data-bs-toggle="modal" >+ Add To Cart</a>
                                 </div>
                             </div>
                             <!-- Start  Product Details Meta Area-->
@@ -321,8 +321,8 @@
                                     <div class="product-default-single-item product-color--green swiper-slide">
                                         <div class="image-box">
                                             <a href="product-details-default.html" class="image-link">
-                                                <img src="/images/product/default/home-1/default-9.jpg" alt="">
-                                                <img src="/images/product/default/home-1/default-10.jpg" alt="">
+                                                <img src="/<%=related[0].imageurl3 %>" alt="">
+                                                <img src="/<%=related[0].imageurl2 %>" alt="">
                                             </a>
                                             <div class="action-link">
                                                 <div class="action-link-left">
@@ -340,8 +340,8 @@
                                         </div>
                                         <div class="content">
                                             <div class="content-left">
-                                                <h6 class="title"><a href="product-details-default.html">Epicuri per
-                                                        lobortis</a></h6>
+                                                <h6 class="title"><a href="product-details-default.html"><%=related[0].name %>
+                                                        </a></h6>
                                                 <ul class="review-star">
                                                     <li class="fill"><i class="ion-android-star"></i></li>
                                                     <li class="fill"><i class="ion-android-star"></i></li>
@@ -351,7 +351,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price">$68</span>
+                                                <span class="price"><%=related[0].price %></span>
                                             </div>
 
                                         </div>
@@ -361,8 +361,8 @@
                                     <div class="product-default-single-item product-color--green swiper-slide">
                                         <div class="image-box">
                                             <a href="product-details-default.html" class="image-link">
-                                                <img src="/images/product/default/home-1/default-11.jpg" alt="">
-                                                <img src="/images/product/default/home-1/default-3.jpg" alt="">
+                                                <img src="/<%=related[1].imageurl3 %>" alt="">
+                                                <img src="/<%=related[1].imageurl2 %>" alt="">
                                             </a>
                                             <div class="action-link">
                                                 <div class="action-link-left">
@@ -380,8 +380,8 @@
                                         </div>
                                         <div class="content">
                                             <div class="content-left">
-                                                <h6 class="title"><a href="product-details-default.html">Kaoreet
-                                                        lobortis sagit</a></h6>
+                                                <h6 class="title"><a href="product-details-default.html"><%=related[1].name %>
+                                                        </a></h6>
                                                 <ul class="review-star">
                                                     <li class="fill"><i class="ion-android-star"></i></li>
                                                     <li class="fill"><i class="ion-android-star"></i></li>
@@ -391,7 +391,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price">$95.00</span>
+                                                <span class="price"><%=related[1].price %></span>
                                             </div>
 
                                         </div>
@@ -401,8 +401,8 @@
                                     <div class="product-default-single-item product-color--green swiper-slide">
                                         <div class="image-box">
                                             <a href="product-details-default.html" class="image-link">
-                                                <img src="/images/product/default/home-1/default-5.jpg" alt="">
-                                                <img src="/images/product/default/home-1/default-7.jpg" alt="">
+                                                <img src="/<%=related[2].imageurl3 %>" alt="">
+                                                <img src="/<%=related[2].imageurl2 %>" alt="">
                                             </a>
                                             <div class="action-link">
                                                 <div class="action-link-left">
@@ -420,8 +420,8 @@
                                         </div>
                                         <div class="content">
                                             <div class="content-left">
-                                                <h6 class="title"><a href="product-details-default.html">Condimentum
-                                                        posuere</a></h6>
+                                                <h6 class="title"><a href="product-details-default.html"><%=related[2].name %>
+                                                        </a></h6>
                                                 <ul class="review-star">
                                                     <li class="fill"><i class="ion-android-star"></i></li>
                                                     <li class="fill"><i class="ion-android-star"></i></li>
@@ -431,7 +431,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price">$115.00</span>
+                                                <span class="price"><%=related[2].price %></span>
                                             </div>
 
                                         </div>
@@ -441,8 +441,8 @@
                                     <div class="product-default-single-item product-color--green swiper-slide">
                                         <div class="image-box">
                                             <a href="product-details-default.html" class="image-link">
-                                                <img src="/images/product/default/home-1/default-6.jpg" alt="">
-                                                <img src="/images/product/default/home-1/default-9.jpg" alt="">
+                                                <img src="/<%=related[4].imageurl3 %>" alt="">
+                                                <img src="/<%=related[4].imageurl2 %>" alt="">
                                             </a>
                                             <div class="action-link">
                                                 <div class="action-link-left">
@@ -460,8 +460,8 @@
                                         </div>
                                         <div class="content">
                                             <div class="content-left">
-                                                <h6 class="title"><a href="product-details-default.html">Convallis quam
-                                                        sit</a></h6>
+                                                <h6 class="title"><a href="product-details-default.html"><%=related[4].name %>
+                                                        </a></h6>
                                                 <ul class="review-star">
                                                     <li class="fill"><i class="ion-android-star"></i></li>
                                                     <li class="fill"><i class="ion-android-star"></i></li>
@@ -471,7 +471,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price">$75.00 - $85.00</span>
+                                                <span class="price"><%=related[4].price %></span>
                                             </div>
 
                                         </div>
@@ -481,8 +481,8 @@
                                     <div class="product-default-single-item product-color--green swiper-slide">
                                         <div class="image-box">
                                             <a href="product-details-default.html" class="image-link">
-                                                <img src="/images/product/default/home-1/default-1.jpg" alt="">
-                                                <img src="/images/product/default/home-1/default-2.jpg" alt="">
+                                                <img src="/<%=related[5].imageurl3 %>" alt="">
+                                                <img src="/<%=related[5].imageurl3 %>" alt="">
                                             </a>
                                             <div class="tag">
                                                 <span>sale</span>
@@ -503,8 +503,8 @@
                                         </div>
                                         <div class="content">
                                             <div class="content-left">
-                                                <h6 class="title"><a href="product-details-default.html">Aliquam
-                                                        lobortis</a></h6>
+                                                <h6 class="title"><a href="product-details-default.html"><%=related[5].name %>
+                                                   </a></h6>
                                                 <ul class="review-star">
                                                     <li class="fill"><i class="ion-android-star"></i></li>
                                                     <li class="fill"><i class="ion-android-star"></i></li>
@@ -514,7 +514,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price">$75.00 - $85.00</span>
+                                                <span class="price"><%=related[5].price %></span>
                                             </div>
 
                                         </div>
@@ -524,8 +524,8 @@
                                     <div class="product-default-single-item product-color--green swiper-slide">
                                         <div class="image-box">
                                             <a href="product-details-default.html" class="image-link">
-                                                <img src="/images/product/default/home-1/default-3.jpg" alt="">
-                                                <img src="/images/product/default/home-1/default-4.jpg" alt="">
+                                                <img src="/<%=related[6].imageurl3 %>" alt="">
+                                                <img src="/<%=related[6].imageurl3 %>" alt="">
                                             </a>
                                             <div class="tag">
                                                 <span>sale</span>
@@ -546,8 +546,8 @@
                                         </div>
                                         <div class="content">
                                             <div class="content-left">
-                                                <h6 class="title"><a href="product-details-default.html">Condimentum
-                                                        posuere</a></h6>
+                                                <h6 class="title"><a href="product-details-default.html"><%=related[6].name %>
+                                                        </a></h6>
                                                 <ul class="review-star">
                                                     <li class="fill"><i class="ion-android-star"></i></li>
                                                     <li class="fill"><i class="ion-android-star"></i></li>
@@ -557,7 +557,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price"><del>$89.00</del> $80.00</span>
+                                                <span class="price"><del><%=related[6].orginalprice %></del> <%=related[6].price%></span>
                                             </div>
 
                                         </div>
@@ -567,8 +567,8 @@
                                     <div class="product-default-single-item product-color--green swiper-slide">
                                         <div class="image-box">
                                             <a href="product-details-default.html" class="image-link">
-                                                <img src="/images/product/default/home-1/default-5.jpg" alt="">
-                                                <img src="/images/product/default/home-1/default-6.jpg" alt="">
+                                                <img src="/<%=related[7].imageurl3 %>" alt="">
+                                                <img src="/<%=related[7].imageurl2 %>" alt="">
                                             </a>
                                             <div class="tag">
                                                 <span>sale</span>
@@ -589,8 +589,8 @@
                                         </div>
                                         <div class="content">
                                             <div class="content-left">
-                                                <h6 class="title"><a href="product-details-default.html">Cras neque
-                                                        metus</a></h6>
+                                                <h6 class="title"><a href="product-details-default.html"><%=related[7].name %>
+                                                    </a></h6>
                                                 <ul class="review-star">
                                                     <li class="fill"><i class="ion-android-star"></i></li>
                                                     <li class="fill"><i class="ion-android-star"></i></li>
@@ -600,7 +600,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price"><del>$70.00</del> $60.00</span>
+                                                <span class="price"><del><%=related[7].orginalprice %></del> <%=related[7].imageurl3 %></span>
                                             </div>
 
                                         </div>
@@ -610,8 +610,8 @@
                                     <div class="product-default-single-item product-color--green swiper-slide">
                                         <div class="image-box">
                                             <a href="product-details-default.html" class="image-link">
-                                                <img src="/images/product/default/home-1/default-7.jpg" alt="">
-                                                <img src="/images/product/default/home-1/default-8.jpg" alt="">
+                                                <img src="/<%=related[8].imageurl3 %>" alt="">
+                                                <img src="/<%=related[8].imageurl2 %>" alt="">
                                             </a>
                                             <div class="action-link">
                                                 <div class="action-link-left">
@@ -629,8 +629,8 @@
                                         </div>
                                         <div class="content">
                                             <div class="content-left">
-                                                <h6 class="title"><a href="product-details-default.html">Donec eu libero
-                                                        ac</a></h6>
+                                                <h6 class="title"><a href="product-details-default.html"><%=related[8].name %>
+                                                     </a></h6>
                                                 <ul class="review-star">
                                                     <li class="fill"><i class="ion-android-star"></i></li>
                                                     <li class="fill"><i class="ion-android-star"></i></li>
@@ -640,7 +640,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price">$74</span>
+                                                <span class="price"><%=related[4].price %></span>
                                             </div>
 
                                         </div>

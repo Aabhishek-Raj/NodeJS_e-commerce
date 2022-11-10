@@ -1,0 +1,136 @@
+<!-- ...:::: Start Breadcrumb Section:::... -->
+<div class="breadcrumb-section breadcrumb-bg-color--golden">
+    <div class="breadcrumb-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="breadcrumb-title">Banner management</h3>
+                    <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+                        <nav aria-label="breadcrumb">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
+                                <li class="active" aria-current="page">Login</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- ...:::: End Breadcrumb Section:::... -->
+
+
+
+
+<div class="container mb-5 pb-5">
+    <div class="container mb-5 pb-5 d-flex justify-content-center">
+        <div class="col-lg-6 ">
+            <div class="coupon_code left" data-aos="fade-up" data-aos-delay="200">
+                <h3>Main Banner</h3>
+                <form action="/admin/mainbannermanage" method="post">
+                    <div class="coupon_inner">
+                        <div class="default-form-box">
+                            <label>Choose the Banner You want to show in the head<span>*</span></label>
+                            <select class="country_option nice-select wide mb-2" name="bannerId">
+                                <option selected>Select a Banner</option>
+                                <% banner.forEach(banner=> {%>
+                                    <option value="<%=banner._id%>"><%=banner.name%></option>
+                                    <%})%>
+                            </select>
+                        </div>
+                        <div class="default-form-box">
+                            
+                            <select class="country_option nice-select wide mb-2" name="bannerId2">
+                                <option selected>Select a Banner</option>
+                                <% banner.forEach(banner=> {%>
+                                    <option value="<%=banner._id%>"><%=banner.name%></option>
+                                    <%})%>
+                            </select>
+                        </div>
+                        <button class="btn btn-md btn-aqua">Apply Banner</button>
+                    </div>
+
+                </form>
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- Start Coupon Start -->
+<div class="coupon_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="coupon_code left" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Banner Left</h3>
+                    <form action="/admin/leftbannermanage" method="post">
+                        <div class="coupon_inner">
+                            <div class="default-form-box">
+                                <label>Choose the Banner You want to show in the Left side<span>*</span></label>
+                                <select class="country_option nice-select wide mb-2" name="bannerId">
+                                    <option selected>Select a Banner</option>
+                                    <% banner.forEach(banner=> {%>
+                                        <option value="<%=banner._id%>"><%=banner.name%></option>
+                                        <%})%>
+                                </select>
+                            </div>
+                            <button class="btn btn-md btn-aqua">Apply Banner</button>
+                        </div>
+    
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="coupon_code left" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Banner Right</h3>
+                    <form action="/admin/rightbannermanage" method="post">
+                        <div class="coupon_inner">
+                            <div class="default-form-box">
+                                <label>Choose the Banner You want to show in the Right side<span>*</span></label>
+                                <select class="country_option nice-select wide mb-2" name="bannerId">
+                                    <option selected>Select a Banner</option>
+                                    <% banner.forEach(banner=> {%>
+                                        <option value="<%=banner._id%>"><%=banner.name%></option>
+                                        <%})%>
+                                </select>
+                            </div>
+                            <button class="btn btn-md btn-aqua">Apply Banner</button>
+                        </div>
+    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Coupon Start -->
+</div> <!-- ...:::: End Cart Section:::... -->
+
+<div class="container mt-5 pt-5"> 
+    <div class="container mb-5 pb-5 d-flex justify-content-center">
+        <div class="col-lg-3 ">
+            <div class="coupon_code left" data-aos="fade-up" data-aos-delay="200">
+                <h3>Add More Banner</h3>
+                <div class="coupon_inner">
+                    <h5>Add More Banners to your Site</h5><br>
+                    <form action="/admin/addbannerimage" method="post" enctype="multipart/form-data">
+                        <div class="default-form-box">
+                            <label for="">Name<span>*</span></label>
+                            <input class="mb-2" placeholder="Enter banner name" name="name" type="text">
+                            <label for="">Image<span>*</span></label>
+                            <input type="file" class="form-control" name="images" multiple>
+                        </div>
+                        <button type="submit" class="btn btn-md btn-black-default-hover">Apply Banner</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

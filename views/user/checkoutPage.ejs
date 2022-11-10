@@ -1,443 +1,557 @@
-
-    <!-- ...:::: Start Breadcrumb Section:::... -->
-    <div class="breadcrumb-section breadcrumb-bg-color--golden">
-        <div class="breadcrumb-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h3 class="breadcrumb-title">Checkout</h3>
-                        <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
-                            <nav aria-label="breadcrumb">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
-                                    <li class="active" aria-current="page">Cart</li>
-                                </ul>
-                            </nav>
-                        </div>
+<!-- ...:::: Start Breadcrumb Section:::... -->
+<div class="breadcrumb-section breadcrumb-bg-color--golden">
+    <div class="breadcrumb-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="breadcrumb-title">Checkout</h3>
+                    <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+                        <nav aria-label="breadcrumb">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
+                                <li class="active" aria-current="page">Cart</li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
-    </div> <!-- ...:::: End Breadcrumb Section:::... -->
+    </div>
+</div> <!-- ...:::: End Breadcrumb Section:::... -->
 
-    <!-- ...:::: Start Checkout Section:::... -->
-    <div class="checkout-section">
-        <div class="container">
-            <div class="row">
-                <!-- User Quick Action Form -->
-                <div class="col-12">
-                    <div class="user-actions accordion" data-aos="fade-up" data-aos-delay="0">
-                        <h3>
-                            <i class="fa fa-file-o" aria-hidden="true"></i>
-                            Returning customer?
-                            <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_login"
-                                aria-expanded="true">Click here to login</a>
-                        </h3>
-                        <div id="checkout_login" class="collapse" data-parent="#checkout_login">
-                            <div class="checkout_info">
-                                <p>If you have shopped with us before, please enter your details in the boxes below. If
-                                    you are a new customer please proceed to the Billing &amp; Shipping section.</p>
-                                <form action="#">
-                                    <div class="form_group default-form-box">
-                                        <label>Username or email <span>*</span></label>
-                                        <input type="text">
-                                    </div>
-                                    <div class="form_group default-form-box">
-                                        <label>Password <span>*</span></label>
-                                        <input type="password">
-                                    </div>
-                                    <div class="form_group group_3 default-form-box">
-                                        <button class="btn btn-md btn-black-default-hover" type="submit">Login</button>
-                                        <label class="checkbox-default">
-                                            <input type="checkbox">
-                                            <span>Remember me</span>
-                                        </label>
-                                    </div>
-                                    <a href="#">Lost your password?</a>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="user-actions accordion" data-aos="fade-up" data-aos-delay="200">
-                        <h3>
-                            <i class="fa fa-file-o" aria-hidden="true"></i>
-                            Returning customer?
-                            <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_coupon"
-                                aria-expanded="true">Click here to enter your code</a>
-
-                        </h3>
-                        <div id="checkout_coupon" class="collapse checkout_coupon" data-parent="#checkout_coupon">
-                            <div class="checkout_info">
-                                <form action="#">
-                                    <input placeholder="Coupon code" type="text">
-                                    <button class="btn btn-md btn-black-default-hover" type="submit">Apply
-                                        coupon</button>
-                                </form>
-                            </div>
+<!-- ...:::: Start Checkout Section:::... -->
+<div class="checkout-section">
+    <div class="container">
+        <div class="row">
+            <!-- User Quick Action Form -->
+            <div class="col-12">
+                <div class="user-actions accordion" data-aos="fade-up" data-aos-delay="0">
+                    <h3>
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Returning customer?
+                        <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_login"
+                            aria-expanded="true">Click here to login</a>
+                    </h3>
+                    <div id="checkout_login" class="collapse" data-parent="#checkout_login">
+                        <div class="checkout_info">
+                            <p>If you have shopped with us before, please enter your details in the boxes below. If
+                                you are a new customer please proceed to the Billing &amp; Shipping section.</p>
+                            <form action="#">
+                                <div class="form_group default-form-box">
+                                    <label>Username or email <span>*</span></label>
+                                    <input type="text">
+                                </div>
+                                <div class="form_group default-form-box">
+                                    <label>Password <span>*</span></label>
+                                    <input type="password">
+                                </div>
+                                <div class="form_group group_3 default-form-box">
+                                    <button class="btn btn-md btn-black-default-hover" type="submit">Login</button>
+                                    <label class="checkbox-default">
+                                        <input type="checkbox">
+                                        <span>Remember me</span>
+                                    </label>
+                                </div>
+                                <a href="#">Lost your password?</a>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <!-- User Quick Action Form -->
+                <div class="user-actions accordion" data-aos="fade-up" data-aos-delay="200">
+                    <h3>
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Returning customer?
+                        <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_coupon"
+                            aria-expanded="true">Click here to enter your code</a>
+
+                    </h3>
+                    <div id="checkout_coupon" class="collapse checkout_coupon" data-parent="#checkout_coupon">
+                        <div class="checkout_info">
+                            <form id="couponForm">
+                                <p>Enter your coupon code if you have one.</p>
+                                <input class="mb-2" placeholder="Coupon code" name="coupon" type="text">
+                                <input class="mb-2" id="hiddentotal" value="<%=carttotal + 50 %>" name="total"
+                                    type="hidden">
+ 
+                                <button class="btn btn-md btn-green" id="couponBtn" type="submit">Apply
+                                    coupon</button>
+                                    <div class="coupon error"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Start User Details Checkout Form -->
-            <div class="checkout_form" data-aos="fade-up" data-aos-delay="400">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <form id="billingform" >
-                            <h3>Billing Details</h3>
-                            <div class="row">
-                               
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label>House Name<span>*</span></label>
-                                        <input type="text" name="housename">
+            <!-- User Quick Action Form -->
+        </div>
+        <!-- Start User Details Checkout Form -->
+        <div class="checkout_form" data-aos="fade-up" data-aos-delay="400">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <form id="billingform">
+                        <h3>Billing Details</h3>
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="default-form-box">
+                                    <label>House Name<span>*</span></label>
+                                    <input type="text" name="housename">
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="default-form-box">
+                                    <label>Street address <span>*</span></label>
+                                    <input placeholder="House number and street name" type="text" name="street">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="default-form-box">
+                                    <label> Apartment<span>*</span></label>
+                                    <input placeholder="Apartment, suite, unit etc." type="text" name="apartment">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="default-form-box">
+                                    <label>Town / City <span>*</span></label>
+                                    <input type="text" name="city">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="default-form-box">
+                                    <label>State <span>*</span></label>
+                                    <input type="text" name="state">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="default-form-box">
+                                    <label>Pin code<span>*</span></label>
+                                    <input type="text" name="pin">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="default-form-box">
+                                    <label>Phone Number <span>*</span></label>
+                                    <input type="text" name="phone">
+                                </div>
+                                <input type="hidden" name="total" value=" <%=carttotal + 50 %>">
+                            </div>
+                            <div class="col-12">
+                                <div class="default-form-box">
+                                    <label for="country">Country <span>*</span></label>
+                                    <select class="country_option nice-select wide" name="country" id="country">
+                                        <option value="India">India</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="Afghanistan">Afghanistan</option>
+                                        <option value="Ghana">Ghana</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Bahrain">Bahrain</option>
+                                        <option value="Colombia">Colombia</option>
+                                        <option value="Dominican Republic">Dominican Republic</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="checkbox-default" for="newAccount" data-bs-toggle="collapse"
+                                    data-bs-target="#newAccountPassword">
+                                    <input type="checkbox" id="newAccount">
+                                    <span>Create an account?</span>
+                                </label>
+                                <div id="newAccountPassword" class="collapse mt-3" data-parent="#newAccountPassword">
+                                    <div class="card-body1 default-form-box">
+                                        <label> Account password <span>*</span></label>
+                                        <input placeholder="password" type="password" name="">
                                     </div>
                                 </div>
-                             
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label>Street address <span>*</span></label>
-                                        <input placeholder="House number and street name" type="text" name="street">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label> Apartment<span>*</span></label>
-                                        <input placeholder="Apartment, suite, unit etc." type="text" name="apartment">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label>Town / City <span>*</span></label>
-                                        <input type="text" name="city">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label>State <span>*</span></label>
-                                        <input type="text" name="state">
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-6">
-                                    <div class="default-form-box">
-                                        <label>Pin code<span>*</span></label>
-                                        <input type="text" name="pin">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="default-form-box">
-                                        <label>Phone Number <span>*</span></label>
-                                        <input type="text" name="phone">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label for="country">Country <span>*</span></label>
-                                        <select class="country_option nice-select wide" name="country" id="country">
-                                            <option value="India">India</option>
-                                            <option value="Bangladesh">Bangladesh</option>
-                                            <option value="Algeria">Algeria</option>
-                                            <option value="Afghanistan">Afghanistan</option>
-                                            <option value="Ghana">Ghana</option>
-                                            <option value="Albania">Albania</option>
-                                            <option value="Bahrain">Bahrain</option>
-                                            <option value="Colombia">Colombia</option>
-                                            <option value="Dominican Republic">Dominican Republic</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label class="checkbox-default" for="newAccount" data-bs-toggle="collapse"
-                                        data-bs-target="#newAccountPassword">
-                                        <input type="checkbox" id="newAccount">
-                                        <span>Create an account?</span>
-                                    </label>
-                                    <div id="newAccountPassword" class="collapse mt-3"
-                                        data-parent="#newAccountPassword">
-                                        <div class="card-body1 default-form-box">
-                                            <label> Account password <span>*</span></label>
-                                            <input placeholder="password" type="password" name="">
+                            </div>
+                            <div class="col-12">
+                                <label class="checkbox-default" for="newShipping" data-bs-toggle="collapse"
+                                    data-bs-target="#anotherShipping">
+                                    <input type="checkbox" id="newShipping">
+                                    <span>Ship to a different address?</span>
+                                </label>
+
+                                <div id="anotherShipping" class="collapse mt-3" data-parent="#anotherShipping">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="default-form-box">
+                                                <label>First Name <span>*</span></label>
+                                                <input type="text" name="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="default-form-box">
+                                                <label>Last Name <span>*</span></label>
+                                                <input type="text" name="">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="default-form-box">
+                                                <label>Company Name</label>
+                                                <input type="text" name="">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="select_form_select default-form-box">
+                                                <label for="countru_name">country <span>*</span></label>
+                                                <select class="niceselect_option wide" name="" id="countru_name">
+                                                    <option value="2">Bangladesh</option>
+                                                    <option value="3">Algeria</option>
+                                                    <option value="4">Afghanistan</option>
+                                                    <option value="5">Ghana</option>
+                                                    <option value="6">Albania</option>
+                                                    <option value="7">Bahrain</option>
+                                                    <option value="8">Colombia</option>
+                                                    <option value="9">Dominican Republic</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="default-form-box">
+                                                <label>Street address <span>*</span></label>
+                                                <input placeholder="House number and street name" type="text" name="">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="default-form-box">
+                                                <input placeholder="Apartment, suite, unit etc. (optional)" type="text"
+                                                    name="">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="default-form-box">
+                                                <label>Town / City <span>*</span></label>
+                                                <input type="text" name="">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="default-form-box">
+                                                <label>State / County <span>*</span></label>
+                                                <input type="text" name="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="default-form-box">
+                                                <label>Phone<span>*</span></label>
+                                                <input type="text" name="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="default-form-box">
+                                                <label> Email Address <span>*</span></label>
+                                                <input type="text" name="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <label class="checkbox-default" for="newShipping" data-bs-toggle="collapse"
-                                        data-bs-target="#anotherShipping">
-                                        <input type="checkbox" id="newShipping">
-                                        <span>Ship to a different address?</span>
-                                    </label>
-
-                                    <div id="anotherShipping" class="collapse mt-3" data-parent="#anotherShipping">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="default-form-box">
-                                                    <label>First Name <span>*</span></label>
-                                                    <input type="text" name="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="default-form-box">
-                                                    <label>Last Name <span>*</span></label>
-                                                    <input type="text" name="">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="default-form-box">
-                                                    <label>Company Name</label>
-                                                    <input type="text" name="">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="select_form_select default-form-box">
-                                                    <label for="countru_name">country <span>*</span></label>
-                                                    <select class="niceselect_option wide" name=""
-                                                        id="countru_name">
-                                                        <option value="2">Bangladesh</option>
-                                                        <option value="3">Algeria</option>
-                                                        <option value="4">Afghanistan</option>
-                                                        <option value="5">Ghana</option>
-                                                        <option value="6">Albania</option>
-                                                        <option value="7">Bahrain</option>
-                                                        <option value="8">Colombia</option>
-                                                        <option value="9">Dominican Republic</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <div class="default-form-box">
-                                                    <label>Street address <span>*</span></label>
-                                                    <input placeholder="House number and street name" type="text" name="">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="default-form-box">
-                                                    <input placeholder="Apartment, suite, unit etc. (optional)"
-                                                        type="text" name="">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="default-form-box">
-                                                    <label>Town / City <span>*</span></label>
-                                                    <input type="text" name="">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="default-form-box">
-                                                    <label>State / County <span>*</span></label>
-                                                    <input type="text" name="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="default-form-box">
-                                                    <label>Phone<span>*</span></label>
-                                                    <input type="text" name="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="default-form-box">
-                                                    <label> Email Address <span>*</span></label>
-                                                    <input type="text" name="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 mt-3">
-                                    <div class="order-notes">
-                                        <label for="order_note">Order Notes</label>
-                                        <textarea id="order_note"
-                                            placeholder="Notes about your order, e.g. special notes for delivery." name="notes"></textarea>
-                                    </div>
-                                </div>
-                             
                             </div>
-            
+                            <div class="col-12 mt-3">
+                                <div class="order-notes">
+                                    <label for="order_note">Order Notes</label>
+                                    <textarea id="order_note"
+                                        placeholder="Notes about your order, e.g. special notes for delivery."
+                                        name="notes"></textarea>
+                                </div>
                             </div>
-                            <div class="col-lg-6 col-md-6">
 
-                        
+                        </div>
 
-                      
-                            <h3>Your order</h3>
-                            <div class="order_table table-responsive">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Product</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
-                                    <% cartItems.forEach(function(cartItem){ %>  
-                                        <% cartItem.productDetails.forEach(function(productDetails){ %> 
+                </div>
+                <div class="col-lg-6 col-md-6">
+
+
+
+
+                    <h3>Your order</h3>
+                    <div class="order_table table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <% cartItems.forEach(function(cartItem){ %>
+                                <% cartItem.productDetails.forEach(function(productDetails){ %>
                                     <tbody>
                                         <tr>
-                                            <td><%=productDetails.name %><strong> × <%=cartItem.quantity%></strong></td>
-                                            <td>&#x20B9; <%= (productDetails.price * cartItem.quantity) %></td>
+                                            <td>
+                                                <%=productDetails.name %><strong> × <%=cartItem.quantity%></strong>
+                                            </td>
+                                            <td>&#x20B9; <%= (productDetails.price * cartItem.quantity) %>
+                                            </td>
                                         </tr>
                                     </tbody>
                                     <% }); %>
-                                    <% }); %>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Cart Subtotal</th>
-                                            <td>&#x20B9; <%=carttotal%></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Shipping</th>
-                                            <td><strong>&#x20B9; 50</strong></td>
-                                        </tr>
-                                        <tr class="order_total">
-                                            <th style="font-size:x-large;">Order Total</th>
-                                            <td style="font-size:x-large;"><strong>&#x20B9; <%=carttotal + 50    %> </strong></td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                            <div class="payment_method">
-                                <div class="panel-default">
-                                    <label class="checkbox-default" for="currencyCod" data-bs-toggle="collapse"
-                                        data-bs-target="#methodCod">
-                                        <input type="radio" id="currencyCod" name="paymentmethod" value="COD">
-                                        <span style="font-weight:bolder;">Cash on Delivery</span>
-                                    </label>
-
-                                    <div id="methodCod" class="collapse" data-parent="#methodCod">
-                                        <div class="card-body1">
-                                            <p>Please send a check to Store Name, Store Street, Store Town, Store State
-                                                / County, Store Postcode.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel-default">
-                                    <label class="checkbox-default" for="currencyPaypal" data-bs-toggle="collapse"
-                                        data-bs-target="#methodPaypal">
-                                        <input type="radio" id="currencyPaypal" name="paymentmethod" value="PAYPAL" >
-                                        <span style="font-weight:bolder;">PayPal</span>
-                                    </label>
-                                    <div id="methodPaypal" class="collapse " data-parent="#methodPaypal">
-                                        <div class="card-body1">
-                                            <p>Pay via PayPal; you can pay with your credit card if you don’t have a
-                                                PayPal account.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="order_button pt-3">
-                                    <button class="btn btn-md btn-green" type="submit">Proceed to
-                                        payment</button>
-                                </div>
-                            </div>
-                        </form>
-                      
+                                        <% }); %>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Cart Subtotal</th>
+                                                    <td>&#x20B9; <%=carttotal%>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Shipping</th>
+                                                    <td><strong>&#x20B9; 50</strong></td>
+                                                </tr>
+                                                <tr class="order_total">
+                                                    <th style="font-size:x-large;">Order Total</th>
+                                                    <td style="font-size:x-large;" id="couTotal"><strong>&#x20B9; <%=carttotal + 50 %>
+                                                        </strong></td>
+                                                </tr>
+                                            </tfoot>
+                        </table>
                     </div>
+                    <div class="payment_method">
+                        <div class="panel-default">
+                            <label class="checkbox-default" for="currencyCod" data-bs-toggle="collapse"
+                                data-bs-target="#methodCod">
+                                <input type="radio" id="currencyCod" name="paymentmethod" value="COD">
+                                <span style="font-weight:bolder;">Cash on Delivery</span>
+                            </label>
+
+                            <div id="methodCod" class="collapse" data-parent="#methodCod">
+                                <div class="card-body1">
+                                    <p>Please send a check to Store Name, Store Street, Store Town, Store State
+                                        / County, Store Postcode.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-default">
+                            <label class="checkbox-default" for="currencyPaypal" data-bs-toggle="collapse"
+                                data-bs-target="#methodPaypal">
+                                <input type="radio" id="currencyRazorpay" name="paymentmethod" value="RAZORPAY">
+                                <span style="font-weight:bolder;">Razorpay</span>
+                            </label>
+                            <div id="methodPaypal" class="collapse " data-parent="#methodPaypal">
+                                <div class="card-body1">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-default">
+                            <label class="checkbox-default" for="currencyPaypal" data-bs-toggle="collapse"
+                                data-bs-target="#methodPaypal">
+                                <input type="radio" id="currencyPaypal" name="paymentmethod" value="PAYPAL">
+                                <span style="font-weight:bolder;">PayPal</span>
+                            </label>
+                            <div id="methodPaypal" class="collapse " data-parent="#methodPaypal">
+                                <div class="card-body1">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order_button pt-3">
+                            <button class="btn btn-md btn-green" type="submit">Proceed to
+                                payment</button>
+                        </div>
+                    </div>
+                    </form>
+
                 </div>
-            </div> <!-- Start User Details Checkout Form -->
-        </div>
-    </div><!-- ...:::: End Checkout Section:::... -->
+            </div>
+        </div> <!-- Start User Details Checkout Form -->
+    </div>
+</div><!-- ...:::: End Checkout Section:::... -->
+
+<div id="paypal-button-container"></div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+<script>
+    const form = document.getElementById('billingform')
+    // const billBtn = document.getElementById('billingbtn')
 
 
-    <script>
-        const form = document.getElementById('billingform')
-        // const billBtn = document.getElementById('billingbtn')
 
 
-	    
-             
-        
 
-  
 
-        form.addEventListener('submit',async (e) => {
-            e.preventDefault()
-      
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+
+
         const formData = new FormData(form)
         const plainFormData = Object.fromEntries(formData.entries());
         const formDataJsonString = JSON.stringify(plainFormData);
-           
-          try{
-                const result = await fetch('/checkoutpost', {
-                    method : 'POST',
-                    body : formDataJsonString ,
-                    headers : { 'Content-Type' : 'application/json' }
-            
+
+        try {
+            const result = await fetch('/checkoutpost', {
+                method: 'POST',
+                body: formDataJsonString,
+                headers: { 'Content-Type': 'application/json' }
+
+            })
+            const data = await result.json()
+            const orderId = data.orderId
+            if (data.codSuccess) {
+                const result = fetch('/stockandsaleschange', {
+                    method: 'POST',
+                    body: JSON.stringify({ orderId }),
+                    headers: { 'Content-Type': 'application/json' }
                 })
-                const data = await result.json()
-                if(data.status){
-                    location.href='/ordersuccess'
-                }
+                location.href = '/ordersuccess'
 
-            }catch(err){ 
-                location.assign('/cart')
-            }  
-        })
+            } else if (data.order) {
+                // const order = await result.json()
+                const order = data.order
 
-            
+                // razorpay code ======>>
+
+                var options = {
+                    "key": "rzp_test_0RoBfcJ7USDj54", // Enter the Key ID generated from the Dashboard
+                    "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                    "currency": "INR",
+                    "name": "Acme Corp",
+                    "description": "Test Transaction",
+                    "image": "https://example.com/your_logo",
+                    "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                    "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+                    "handler": async function (response) {
+
+                        const result = await fetch('/verify-payment', {
+                            method: 'POST',
+                            body: JSON.stringify({ response, order }),
+                            headers: { 'Content-Type': 'application/json' }
+
+                        })
+                        const data = await result.json()
+                        if (data.status) {
+                            const result = fetch('/stockandsaleschange', {
+                                method: 'POST',
+                                body: JSON.stringify({ orderId }),
+                                headers: { 'Content-Type': 'application/json' }
+                            })
+                            location.href = '/ordersuccess'
+                        } else {
+                            alert('Payment Failed')
+                        }
+
+                    },
+                    "prefill": {
+                        "name": "Gaurav Kumar",
+                        "email": "gaurav.kumar@example.com",
+                        "contact": "9999999999"
+                    },
+                    "notes": {
+                        "address": "Razorpay Corporate Office"
+                    },
+                    "theme": {
+                        "color": "#3399cc"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
+            } else if (data.paypal) {
+                const userOrderId = data.paypal
+
+                // paypal integration =====>>
+
+
+                paypal.Buttons({
+                    // Order is created on the server and the order id is returned
+                    createOrder: (data, actions) => {
+                        return fetch("/paypalorders", {
+                            method: "post",
+                            headers: { 'Content-Type': 'application/json' },
+                            body: formDataJsonString
+                            // use the "body" param to optionally pass additional order information
+                            // like product ids or amount
+                        })
+                            .then((response) => response.json())
+                            .then((order) => order.id);
+                    },
+                    // Finalize the transaction on the server after payer approval
+                    onApprove: (data, actions) => {
+                        return fetch(`/paypalverify/${data.orderID}/capture`, {
+                            method: "post",
+                        })
+                            .then((response) => response.json())
+                            .then((orderData) => {
+                                // Successful capture! For dev/demo purposes:
+                                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                const transaction = orderData.purchase_units[0].payments.captures[0];
+                                alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+                                // When ready to go live, remove the alert and show a success message within this page. For example:
+                                // const element = document.getElementById('paypal-button-container');
+                                // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                // Or go to another URL:  actions.redirect('thank_you.html');
+                                console.log(transaction);
+                                async function stockchage() {
+                                    if (transaction.id) {
+                                        const result = await fetch('/placingpayment', {
+                                            method: 'POST',
+                                            body: JSON.stringify({ userOrderId }),
+                                            headers: { 'Content-Type': 'application/json' }
+                                        })
+                                        const data = await result.json()
+                                        if (data.set) {
+                                            const resul = fetch('/stockandsaleschange', {
+                                                method: 'POST',
+                                                body: JSON.stringify({ orderId }),
+                                                headers: { 'Content-Type': 'application/json' }
+                                            })
+                                            location.href = '/ordersuccess'
+
+                                        }
+
+                                    } else {
+                                        alert('payments failed')
+                                    }
+
+                                }
+                                stockchage()
+
+                            });
+                    }
+                }).render('#paypal-button-container');
+
+            }
+
+        } catch (err) {
+            location.assign('/cart')
+        }
+    })
 
 
 
 
+    const cForm = document.getElementById('couponForm')
+    const couponBtn = document.getElementById('couponBtn')
+
+    const couponError = document.querySelector(".coupon.error")  
 
 
+    couponBtn.addEventListener('click', async (e) => {
+        e.preventDefault()
 
+        couponError.textContent = ""
 
+        const formData = new FormData(cForm)
+        const plainFormData = Object.fromEntries(formData.entries())
+        const formDataJsonString = JSON.stringify(plainFormData)
 
+        try {
+            const result = await fetch('/applycoupon', {
+                method: 'POST',
+                body: formDataJsonString,
+                headers: { 'Content-Type': 'application/json' }
 
-//         /**
-//  * Helper function for POSTing data as JSON with fetch.
-//  *
-//  * @param {Object} options
-//  * @param {string} options.url - URL to POST data to
-//  * @param {FormData} options.formData - `FormData` instance
-//  * @return {Object} - Response body from URL that was POSTed to
-//  */
-// async function postFormDataAsJson({ url, formData }) {
-// 	const plainFormData = Object.fromEntries(formData.entries());
-// 	const formDataJsonString = JSON.stringify(plainFormData);
+            })
+            const data = await result.json()
+            if (data.tot) {
+                console.log(data.tot);
+                document.getElementById('couTotal').innerHTML = data.tot
+            }
+            if(data.error){
+                couponError.textContent = data.msg
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    })
 
-// 	const fetchOptions = {
-// 		method: "POST",
-// 		headers: {
-// 			"Content-Type": "application/json",
-// 			Accept: "application/json",
-// 		},
-// 		body: formDataJsonString,
-// 	};
-
-// 	const response = await fetch(url, fetchOptions);
-
-// 	if (!response.ok) {
-// 		const errorMessage = await response.text();
-// 		throw new Error(errorMessage);
-// 	}
-
-// 	return response.json();
-// }
-
-// /**
-//  * Event handler for a form submit event.
-//  *
-//  * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
-//  *
-//  * @param {SubmitEvent} event
-//  */
-// async function handleFormSubmit(event) {
-// 	event.preventDefault();
-
-// 	const form = event.currentTarget;
-// 	const url = form.action;
-
-// 	try {
-// 		const formData = new FormData(form);
-// 		const responseData = await postFormDataAsJson({ url, formData });
-
-// 		console.log({ responseData });
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// }
-
-// const exampleForm = document.getElementById("example-form");
-// exampleForm.addEventListener("submit", handleFormSubmit);
-    </script>
+</script>

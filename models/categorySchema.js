@@ -4,6 +4,10 @@ const categorySchema = new mongoose.Schema({
   category: {
     type: String,
     required: true
+  },
+  offer: {
+    type: Number,
+    default: 0
   }
 
 })

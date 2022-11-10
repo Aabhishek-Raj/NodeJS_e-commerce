@@ -1,14 +1,142 @@
-<div class="shop-section">
-    <div class="container ">
-        <div class="row flex-column-reverse flex-lg-row ">
-            <div class="col-lg-12">
+
+    <!-- Start Hero Slider Section-->
+    <div class="hero-slider-section">
+        <!-- Slider main container -->
+        <div class="hero-slider-active swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Start Hero Single Slider Item -->
+                <div class="hero-single-slider-item swiper-slide">
+                    <!-- Hero Slider Image -->
+                    <div class="hero-slider-bg">
+                        <img src="<%=banners[0].mainBanner%>" alt="">
+                    </div>
+                    <!-- Hero Slider Content -->
+                    <div class="hero-slider-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="hero-slider-content">
+                                        <h4 class="subtitle">Light up your life</h4>
+                                        <h1 class="title">Morganite ring <br> everyday elegance</h1>
+                                        <a href="product-details-default.html" class="btn btn-lg btn-outline-aqua">shop
+                                            now </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Hero Single Slider Item -->
+                <!-- Start Hero Single Slider Item -->
+                <div class="hero-single-slider-item swiper-slide">
+                    <!-- Hero Slider Image -->
+                    <div class="hero-slider-bg">
+                        <img src="<%=banners[0].mainBanner2%>" alt="">
+                    </div>
+                    <!-- Hero Slider Content -->
+                    <div class="hero-slider-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="hero-slider-content">
+                                        <h4 class="subtitle">A Perfect Jewelry</h4>
+                                        <h1 class="title">New Collection <br> Arrived</h1>
+                                        <a href="product-details-default.html" class="btn btn-lg btn-outline-aqua">shop
+                                            now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Hero Single Slider Item -->
+            </div>
+
+            <!-- If we need pagination -->
+            <div class="swiper-pagination active-color-aqua"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev d-none d-lg-block"></div>
+            <div class="swiper-button-next d-none d-lg-block"></div>
+        </div>
+    </div>
+    <!-- End Hero Slider Section-->
+
+    <!-- Start Banner Section -->
+    <div class="banner-section section-top-gap-100">
+        <div class="banner-wrapper">
+            <div class="container">
+                <div class="row d-flex align-items-center mb-n6">
+                    <div class="col-xxl-6 col-md-6 mb-6">
+                        <!-- Start Banner Single Item -->
+                        <a href="product-details-default.html">
+                            <div class="banner-single-item banner-style-9 banner-animation banner-color--green float-left"
+                                data-aos="fade-up" data-aos-delay="0">
+                                <div class="image">
+                                    <img class="img-fluid" src="<%=banners[0].leftBanner%>" alt="">
+                                </div>
+                            </div>
+                        </a>
+                        <!-- End Banner Single Item -->
+                    </div>
+                    <div class="col-xxl-5 col-md-6 mb-6">
+                        <!-- Start Banner Single Item -->
+                        <div class="banner-single-item banner-style-10" data-aos="fade-up" data-aos-delay="200">
+                            <a href="product-details-default.html">
+                                <div class="banner-animation banner-color--green">
+                                    <div class="image">
+                                        <img class="img-fluid" src="<%=banners[0].rightBanner%>"
+                                            alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="content-out">
+                                <div class="inner-out">
+                                    <h3 class="inner-title">
+                                        <span class="title">Merry Gold</span>
+                                        <span class="price">&#x20B9;9799</span>
+                                    </h3>
+                                    <p>18 - karat Gold double ring with Pave Diamonds 0.42 total carat weight</p>
+                                </div>
+                                <a href="product-details-default.html"
+                                    class="btn btn-lg btn-outline-aqua icon-space-left">Browse <span><i
+                                            class="ion-ios-arrow-thin-right"></i></span></a>
+                            </div>
+                        </div>
+                        <!-- End Banner Single Item -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner Section -->
+
+    <!-- Start Product Default Slider Section -->
+    <div class="product-default-slider-section section-top-gap-100 section-fluid">
+        <!-- Start Section Content Text Area -->
+        <div class="section-title-wrapper" data-aos="fade-up" data-aos-delay="0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-content-gap">
+                            <div class="secton-content">
+                                <h3 class="section-title">the New arrivals</h3>
+                                <p>Buy now to receive exclusive deals & gifts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 
                 <!-- Start Tab Wrapper -->
-                <div class="sort-product-tab-wrapper ">
+                <!-- <div class="sort-product-tab-wrapper " id="prodi"> -->
                     <div class="container ">
                         <div class="row ">
                            
-                            <div class="col-12  ">
+                            <div class="col-12">
                                 <div class="tab-content ">
                                   
                                     <!-- Start Grid View Product -->
@@ -65,10 +193,8 @@
                                             
                                                             <div class="content-right"> 
                                                                 <span class="price" style="color: green; font-weight:bolder; font-size:large;">&#x20B9; <%=product.price%></span><br>
-                                                                <span class="price "><%=product.offer %></span>
-                                                                <span class="price" style="color:black ;"><del>&#x20B9;70.00</del></span>
-
-                                                               
+                                                                <span class="price "><%=product.offer%>%off </span>
+                                                                <span class="price" style="color:black ;"> <del>&#x20B9;<%=product.orginalprice%></del></span>                      
                                                             </div>
 
                                                         </div>
@@ -92,9 +218,3 @@
                         </div>
                     </div>
                 </div> <!-- End Tab Wrapper -->
-
-
-            </div>
-        </div>
-    </div>
-</div>

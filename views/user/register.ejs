@@ -131,7 +131,7 @@
         
 
         try{
-            const result = await fetch('/signup', {
+            const result = await fetch('/signup', { 
                 method : 'post',
                 body : JSON.stringify({username, phoneNo, email, password, }),    
                 headers : { 'Content-Type' : 'application/json'}

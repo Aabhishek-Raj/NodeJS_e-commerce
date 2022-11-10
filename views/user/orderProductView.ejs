@@ -23,11 +23,11 @@
                                                     data-aos="fade-up" data-aos-delay="0">
                                                     <a href="product-details-default.html"
                                                         class="product-list-img-link">
-                                                        <img class="img-fluid " style="width:180px ;height:20   0px ;"
-                                                            src="<%=orderItems.product.imageurl%>"
+                                                        <img class="img-fluid " style="width:900px ;height:330px ;"
+                                                            src="/<%=orderItems.product.imageurl%>"
                                                             alt="">
                                                         <img class="img-fluid"
-                                                            src="<%=orderItems.product.imageurl%>   "
+                                                            src="/<%=orderItems.product.imageurl2%>"
                                                             alt="">
                                                     </a>
                                                     <div class="product-list-content">
@@ -44,6 +44,7 @@
                                                         <span class="product-list-price"><del>$ <%=orderItems.product.offer%></del>
                                                             $<%=orderItems.product.price%></span>
                                                         <h6> Quantity : <%=orderItems.quantity%> </h6>
+                                                        <p><%=orderItems.product.discription%></p>
                                                         <div class="product-action-icon-link-list">
                                                             <a href="#" data-bs-toggle="modal"
                                                                 data-bs-target="#modalAddcart"

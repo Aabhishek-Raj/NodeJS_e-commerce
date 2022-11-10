@@ -220,12 +220,12 @@
                                                     </a></td>
                                             <td class="product-price">$<%=product.price%></td>
                                             <td class="product_stock"><%=product.stock%></td>
-                                            <td class="product_addcart"><a href="#" class="btn btn-md btn-green"
-                                                    data-bs-toggle="modal" data-bs-target="#modalAddcart">Add To
+                                            <td class="product_addcart"><a href="/add-to-cart/<%= product._id %>/<%= product.price %>" class="btn btn-md btn-green"
+                                                    data-bs-toggle="modal" >Move To
                                                     Cart</a></td>
 
                                         </tr> <!-- End Wishlist Single Item-->
-                                        <% }); %>
+                                        <% }); %>   
                                     </tbody>
                                 </table>
                             </div>

@@ -1,0 +1,105 @@
+
+    <!-- ...:::: Start Breadcrumb Section:::... -->
+    <div class="breadcrumb-section breadcrumb-bg-color--golden">
+        <div class="breadcrumb-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="breadcrumb-title">Order History</h3>
+                        <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+                            <nav aria-label="breadcrumb">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
+                                    <li class="active" aria-current="page">Wishlist</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- ...:::: End Breadcrumb Section:::... -->
+
+    <!-- ...:::: Start Wishlist Section:::... -->
+    <div class="wishlist-section">
+        <!-- Start Cart Table -->
+        <div class="wishlish-table-wrapper" data-aos="fade-up" data-aos-delay="0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table_desc">
+                            <div class="table_page table-responsive">
+                                <table>
+                                    <!-- Start Wishlist Table Head -->
+                                    <thead>
+                                        <tr>
+                                            <th class="product_thumb">S.No</th>
+                                            <th class="product_name">Date</th>
+                                            <th class="product_name">Address</th>
+                                            <th class="product-price">Status</th>
+                                            <th class="product-price">Price</th>                                        
+                                            <th class="product_addcart">change status</th>
+                                            <th class="product_addcart">apply</th>
+                                        </tr>
+                                    </thead> <!-- End Cart Table Head -->
+                                    <tbody>       
+                                        <!-- Start Wishlist Single Item-->
+                                        <% allOrders.forEach(function(order, index){ %>
+                                            
+                                        <tr>
+                                            <td ><%=index + 1%></td>
+                                            <td class="product_stock"><%=order.createdAt.toLocaleDateString()%></td>
+                                             
+                                             
+                                            <td class="product_name"><%=order.deliveryDetails%></td>
+                                            <%if(order.orderstatus === 'Dispatched'){%>{
+                                                <td class="product_stock" style="font-weight:bolder;color:blue;"><%=order.orderstatus%></td>
+
+                                            <%}else if(order.orderstatus === 'Delivered'){%>
+                                            <td class="product_stock" style="font-weight:bold;color:green;"><%=order.orderstatus%></td>
+                                            <%}else{%>
+                                                <td class="product_stock" style="font-weight:bolder;color:black;"><%=order.orderstatus%></td>
+                                                <% } %>
+                                            <td class="product-price">$<%=order.totalamount%></td>
+                                            
+                                            <% if(order.orderstatus === 'Return'){%>
+                                                <td><p style="color:red;">User want to return the product</p></td>
+                                                <td><button type="submit" class="btn btn-md btn-green">Return</button></td>
+                                                
+
+                                                <%}else{%> 
+                                            <form action="/admin/cancelorder/<%=order._id%>" method="post">
+                                                <td>
+                                                <select class="form-select" name="status" aria-label="Default select example" required>
+                                                   <option selected> <%=order.orderstatus%></option>
+                                                    <option value="Dispatch">Dispatch</option>
+                                                    <option value="Deliver">Deliver</option>
+                                                    <option value="Cancel">Cancel</option>     
+                                                </select>
+                                                <input type="hidden" value="<%=order._id%>" name="id">
+                                              </td>
+                                              <% if(order.orderstatus === 'Delivered'){%>
+                                                <td class="product_addcart"><a href="" class="btn btn-md btn-green">Email</a></td>
+                                                <%}else{%> 
+                                                    <td>
+                                                        <button type="submit" class="btn btn-md btn-green">Update</button>
+                                                      </td>  
+                                                    
+                                                    <% } %>  
+                                            </form>
+                                            <% } %>  
+                                            <!-- <td class="product_addcart"><a href="/admin/cancelorder/<%=order._id%>" class="">Cancel
+                                                    Order</a></td> -->
+
+                                        </tr> <!-- End Wishlist Single Item-->
+                                        <% }); %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End Cart Table -->
+    </div> <!-- ...:::: End Wishlist Section:::... -->

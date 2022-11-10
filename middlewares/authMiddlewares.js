@@ -90,7 +90,6 @@ const adminRequireAuth = (req, res, next) => {
   }
 }
 
-
 // Checking current admin =======>>
 
 const checkAdmin = (req, res, next) => {
@@ -113,5 +112,6 @@ const checkAdmin = (req, res, next) => {
     next()
   }
 }
+
 
 module.exports = { requireAuth, checkUser, ifAuth, adminRequireAuth, checkAdmin }

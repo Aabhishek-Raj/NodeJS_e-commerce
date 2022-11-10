@@ -1,0 +1,113 @@
+    <!-- ...:::: Start Breadcrumb Section:::... -->
+    <div class="breadcrumb-section breadcrumb-bg-color--golden">
+        <div class="breadcrumb-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="breadcrumb-title">Coupon management</h3>
+                        <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+                            <nav aria-label="breadcrumb">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
+                                    <li class="active" aria-current="page">Login</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- ...:::: End Breadcrumb Section:::... -->
+
+
+
+    <div class="container mb-5 pb-5">
+        <div class="container mb-5 pb-5">
+            <div class="container col-md-6 mb-5 pb-5">
+                <form id="example-form" action="/admin/addcoupon" method="post" >
+                    <div class="default-form-box ">
+                        <label >Coupon Code<span>*</span></label>
+                        <input type="text" name="couponCode">
+                        <div class="username error"></div>
+                    </div>
+                    <div class="default-form-box">
+                        <label>Coupon Value <span>*</span></label>
+                        <input type="text" name="couponValue">
+                        <div class="phoneNo error"> </div> 
+                    </div>
+                    <div class="default-form-box">
+                        <label>Minimum Bill <span>*</span></label>
+                        <input type="text"class="form-control" name="minBill">
+                        <div class="email error"></div>
+                    </div>
+      
+                    <div class="default-form-box">
+                        <label>Expiry Date<span>*</span></label>
+                        <input type="date"class="form-control" name="couponExpiry">
+                        <div class="password error"></div>
+                    </div>
+                    <div class="login_submit">
+                        <button class="btn btn-md btn-aqua" type="submit">Add Coupon</button>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+  
+
+
+
+
+
+    <!-- available coupon -->
+
+            <!-- Start Cart Table -->
+            <div class="wishlish-table-wrapper" data-aos="fade-up" data-aos-delay="0">
+                <div class="container mt-5">
+                    <div class="row">
+                        <h4 class="mb-5"">Existing Coupons<span>*</span></h4>
+                        <div class="col-12">                         
+                            <div class="table_desc">
+                                <div class="table_page table-responsive">
+                                    <table>
+                                        <!-- Start Wishlist Table Head -->
+                                        <thead>
+                                            <tr>
+                                                <th class="product_thumb">Coupon code</th>
+                                                <th class="product-price">value</th>
+                                                <th class="product_stock">bill required</th>
+                                                <th class="product_stock">Expiry</th>
+                                                <th class="product_stock">delete</th>
+                                            </tr>
+                                        </thead> <!-- End Cart Table Head -->
+                                        <tbody>
+                                            <!-- Start Wishlist Single Item-->
+                                            <% coupons.forEach(coupon => { %>   
+                                            <tr>
+                                           
+                                                <td class="product_name"><a href="product-details-default.html"> <%=coupon.couponCode %>
+                                                        </a></td>
+                                                <td class="product_stock">&#x20B9; <%=coupon.couponValue %></td>
+                                                <td class="product_stock">&#x20B9; <%=coupon.minBill %></td>
+                                                <td class="product_stock"><%=coupon.couponExpiry.toDateString() %></td>
+    
+                                                <td class="product_remove"><a href="/admin/deleteproduct"><i class="fa fa-trash-o"></i></a>
+                                                </td>
+                                        
+                                            </tr> <!-- End Wishlist Single Item-->
+                                            <% })  %>
+                                        </tbody>
+                                    </table>
+                                   
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/admin/addproduct"
+                    class="btn btn-lg btn-outline-aqua icon-space-left mt-5">Add More Product <span><i
+                            class="ion-ios-arrow-thin-right"></i></span></a>
+                </div>
+  
+  
