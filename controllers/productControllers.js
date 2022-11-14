@@ -28,7 +28,7 @@ module.exports.singleproduct_get = async (req, res) => {
     const related = await Product.find({})
     res.render('user/single-productView', { product: products, related })
   } catch (err) {
-    console.log(err + ' single product view not allowed')
+    res.redirect('/intex.html')
   }
 }
 
@@ -163,7 +163,7 @@ module.exports.addToWishlist_Get = async (req, res) => {
       res.redirect('/')
     }
   } catch (err) {
-    res.render('user/error')
+    res.redirect('/intex.html')
   }
 }
 
@@ -418,7 +418,7 @@ module.exports.userOrderCancel_Get = async (req, res) => {
     })
   res.redirect('/vieworderdetails')
 }
-module.exports.userOrderreturn_Get = async (req, res) => {
+module.exports.userOrderreturn_Get = async (req, res ) => {
   await Order.updateOne({ _id: req.params.id },
     {
       $set: {

@@ -35,3 +35,7 @@ mongoose.connect(dbURI)
 app.use('*', checkUser, cartCount, wishCount, offcCart, offcWish)
 app.use('/', checkUser, userRouter)
 app.use('/admin', adminRouter)
+
+app.use(function (req, res, next) {
+  res.render('user/error')
+})
