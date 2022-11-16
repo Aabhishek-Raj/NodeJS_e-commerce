@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }))
 // View engine
 app.set('view engine', 'ejs')
 
-const dbURI = 'mongodb://localhost:27017/PROJECT'
+const dbURI = process.env.dbURI
 mongoose.connect(dbURI)
   .then(() => {
     console.log('connected to db')
