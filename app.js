@@ -28,7 +28,7 @@ mongoose.connect(dbURI)
   .then(() => {
     console.log('connected to db')
     // listening for requests
-    app.listen(7000)
+    app.listen(3000)
   })
   .catch((err) => console.log(err))
 
