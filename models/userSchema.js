@@ -42,6 +42,37 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'product'
 
+  }],
+  addresses: [{
+    house: {
+      type: String,
+      required: true
+    },
+    street: {
+      type: String,
+      required: true
+    },
+    apartment: {
+      type: String,
+      required: true
+    },
+    city: {
+      type: String,
+      required: true
+    },
+    state: {
+      type: String,
+      required: true
+    },
+    pincode: {
+      type: Number,
+      required: true
+    },
+    country: {
+      type: String,
+      required: true
+    }
+
   }]
 })
 

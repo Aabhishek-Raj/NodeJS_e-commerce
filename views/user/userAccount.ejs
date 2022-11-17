@@ -32,12 +32,12 @@
                             <li><a href="#dashboard" data-bs-toggle="tab"
                                     class="nav-link btn btn-block btn-md btn-green active">Dashboard</a>
                             </li>
-                            <li> <a href="#orders" data-bs-toggle="tab"
+                            <li> <a href="/vieworderdetails" 
                                     class="nav-link btn btn-block btn-md btn-green">Orders</a></li>
-                            <li><a href="#downloads" data-bs-toggle="tab"
+                            <li><a href="/downloads" 
                                     class="nav-link btn btn-block btn-md btn-green">Downloads</a></li>
-                            <li><a href="#address" data-bs-toggle="tab"
-                                    class="nav-link btn btn-block btn-md btn-green">Addresses</a></li>
+                            <li><a href="/addaddressform" 
+                                    class="nav-link btn btn-block btn-md btn-green">New Address</a></li>
                             <li><a href="#account-details" data-bs-toggle="tab"
                                     class="nav-link btn btn-block btn-md btn-green">Account details</a>
                             </li>
@@ -53,9 +53,15 @@
                             <h4><%=user.username%></h4>
                             <h6><%=user.email%></h6>
                             <h6><%=user.phoneNo%></h6>
-                            <p>From your account dashboard. you can easily check &amp; view your <a href="#">recent
+                            <!-- <p>From your account dashboard. you can easily check &amp; view your <a href="#">recent
                                     orders</a>, manage your <a href="#">shipping and billing addresses</a> and <a
-                                    href="#">Edit your password and account details.</a></p>
+                                    href="#">Edit your password and account details.</a></p> -->
+                            <h5>Addresses:</h5>
+                                <p><a href="#"><%=user.addresses[0]  %></a> </p>
+                                <p><a href="#"><%=user.addresses[1]  %></a> </p>
+                                <p><a href="#"><%=user.addresses[2]  %></a> </p>
+                                <p><a href="#"><%=user.addresses[4]  %></a> </p>
+                            
                         </div>
                         <div class="tab-pane fade" id="orders">
                             <h4>Orders</h4>

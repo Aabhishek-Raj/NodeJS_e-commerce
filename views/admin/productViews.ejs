@@ -25,12 +25,12 @@
     <div class="wishlist-section">
         <!-- Start Cart Table -->
         <div class="wishlish-table-wrapper" data-aos="fade-up" data-aos-delay="0">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="table_desc">
                             <div class="table_page table-responsive">
-                                <table>
+                                <table id="prodtable">
                                     <!-- Start Wishlist Table Head -->
                                     <thead >
                                         <tr>
@@ -89,7 +89,7 @@
             $('#prodtable').DataTable({
               dom: 'Bfrtip',
               buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
+                
               ]
             });
           });

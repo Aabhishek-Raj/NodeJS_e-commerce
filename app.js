@@ -5,7 +5,7 @@ const userRouter = require('./routes/user')
 const adminRouter = require('./routes/admin')
 const cookieParser = require('cookie-parser')
 const nocache = require('nocache')
-const { checkUser } = require('./middlewares/authMiddlewares')
+const { checkUser, adminRequireAuth } = require('./middlewares/authMiddlewares')
 const { cartCount, wishCount, offcCart, offcWish } = require('./middlewares/productMiddlewares')
 
 // const bodyParser = require('body-parser')
@@ -34,7 +34,7 @@ mongoose.connect(dbURI)
 
 app.use('*', checkUser, cartCount, wishCount, offcCart, offcWish)
 app.use('/', checkUser, userRouter)
-app.use('/admin', adminRouter)
+app.use('/admin', adminRouter, adminRequireAuth)
 
 app.use(function (req, res, next) {
   res.render('user/error')

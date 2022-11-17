@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Add your Address</h2>
+<form action="/addaddress" method="post">
+    <div class="row">
+
+        <div class="col-12">
+            <div class="default-form-box">
+                <label>House Name<span>*</span></label>
+                <input type="text" name="house" required>
+            </div>
+        </div>
+    
+        <div class="col-12">
+            <div class="default-form-box">
+                <label>Street address <span>*</span></label>
+                <input placeholder="House number and street name" type="text" name="street">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="default-form-box">
+                <label> Apartment<span>*</span></label>
+                <input placeholder="Apartment, suite, unit etc." type="text" name="apartment">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="default-form-box">
+                <label>Town / City <span>*</span></label>
+                <input type="text" name="city">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="default-form-box">
+                <label>State <span>*</span></label>
+                <input type="text" name="state">
+            </div>
+        </div>
+    
+        <div class="col-lg-6">
+            <div class="default-form-box">
+                <label>Pin code<span>*</span></label>
+                <input type="text" name="pincode">
+            </div>
+        </div>
+        <!-- <div class="col-lg-6">
+            <div class="default-form-box">
+                <label>Phone Number <span>*</span></label>
+                <input type="text" name="phone">
+            </div>
+            <input type="hidden" name="total" value="">
+        </div> -->
+        <div class="col-12">
+            <div class="default-form-box">
+                <label for="country">Country <span>*</span></label>
+                <select class="country_option nice-select wide" name="country" id="country">
+                    <option value="India">India</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Albania">Albania</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Dominican Republic">Dominican Republic</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-12">
+            <label class="checkbox-default" for="newAccount" data-bs-toggle="collapse" data-bs-target="#newAccountPassword">
+                <input type="checkbox" id="newAccount">
+                <span>Create an account?</span>
+            </label>
+            <div id="newAccountPassword" class="collapse mt-3" data-parent="#newAccountPassword">
+                <div class="card-body1 default-form-box">
+                    <label> Account password <span>*</span></label>
+                    <input placeholder="password" type="password" name="">
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt-3">
+            <div class="order-notes">
+                <label for="order_note">Order Notes</label>
+                <textarea id="order_note" placeholder="Notes about your order, e.g. special notes for delivery."
+                    name="notes"></textarea>
+            </div>
+        </div>
+        <div class="order_button pt-3">
+            <button class="btn btn-md btn-green" type="submit">Add
+                Address</button>
+        </div>
+    
+    </div>  
+</form>
+
+
+        </div>
+    </div>
+</div>

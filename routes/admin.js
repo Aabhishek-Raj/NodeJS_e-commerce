@@ -2,6 +2,7 @@ const router = require('express').Router()
 const adminProductController = require('../controllers/adminProductController')
 const adminAuthController = require('../controllers/adminAuthController')
 const prodMiddlewares = require('../middlewares/productMiddlewares')
+const authMiddlewares = require('../middlewares/authMiddlewares')
 
 // admin authentication ===========>>
 
@@ -14,7 +15,7 @@ router.get('/adminlogout', adminAuthController.adminlogout_get)
 
 // admin home =====================>>
 
-router.get('/', (req, res) => {
+router.get('/', authMiddlewares.adminRequireAuth, (req, res) => {
   res.render('admin/adminHome', { layout: './layouts/adminLayout' })
 })
 

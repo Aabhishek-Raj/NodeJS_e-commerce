@@ -8,6 +8,7 @@ require('dotenv').config()
 const fetch = require('node-fetch')
 const Coupon = require('../models/couponSchema')
 const Admin = require('../models/adminSchema')
+const { log } = require('console')
 const base = 'https://api-m.sandbox.paypal.com'
 
 const instance = new Razorpay({
@@ -191,6 +192,7 @@ module.exports.deleteFromWishlist_Get = async (req, res) => {
 module.exports.checkoutPage_Get = async (req, res) => {
   const userId = req.user.id
   const cart = await Cart.findOne({ user: userId })
+  const user = await User.findOne({ _id: userId })
   const cartItems = await Cart.aggregate([
     {
       $match: { user: userId }
@@ -213,7 +215,7 @@ module.exports.checkoutPage_Get = async (req, res) => {
       }
     }
   ])
-  res.render('user/checkoutPage', { cartItems, carttotal: cart.total })
+  res.render('user/checkoutPage', { cartItems, user: user.addresses, carttotal: cart.total })
 }
 
 module.exports.checkoutPage_Post = async (req, res) => {
@@ -222,17 +224,29 @@ module.exports.checkoutPage_Post = async (req, res) => {
     const cart = await Cart.findOne({ user: req.user.id })
     const total = cart.total
     const products = cart.products
-    const status = req.body.paymentmethod === 'COD' ? 'placed' : 'pending'
-
+    const status = req.body.paymentmethod === 'COD' ? 'Placed' : 'pending'
+    // const existing = req.body.existingHome
+    // console.log(existing)
+    const da = req.body.existingHome
+    let obj
+    if (da) {
+      const properties = da.split(',')
+      obj = {}
+      properties.forEach(function (property) {
+        const tup = property.split(':')
+        obj[tup[0]] = tup[1]
+      })
+    }
+    // console.log(exit)
     const orderObj = {
       deliveryDetails: {
-        house: req.body.housename,
-        street: req.body.street,
-        apartment: req.body.apartment,
-        city: req.body.city,
-        pincode: req.body.pin,
-        state: req.body.state,
-        country: req.body.country
+        house: req.body.housename || obj.house,
+        street: req.body.street || obj.street,
+        apartment: req.body.apartment || obj.apartment,
+        city: req.body.city || obj.city,
+        pincode: req.body.pin || obj.pincode,
+        state: req.body.state || obj.state,
+        country: req.body.country || obj.country
       },
       userId: req.user.id,
       paymentmethod: req.body.paymentmethod,
@@ -241,6 +255,8 @@ module.exports.checkoutPage_Post = async (req, res) => {
       phone: req.body.phone,
       orderstatus: status
     }
+    console.log(orderObj)
+
     const order = await Order.insertMany(orderObj)
     await Cart.deleteOne({ user: req.user.id })
     const orderId = '' + order[0]._id
@@ -418,7 +434,7 @@ module.exports.userOrderCancel_Get = async (req, res) => {
     })
   res.redirect('/vieworderdetails')
 }
-module.exports.userOrderreturn_Get = async (req, res ) => {
+module.exports.userOrderreturn_Get = async (req, res) => {
   await Order.updateOne({ _id: req.params.id },
     {
       $set: {
@@ -465,6 +481,14 @@ module.exports.userAccount = async (req, res) => {
   const userId = req.user.id
   const user = await User.findOne({ _id: userId })
   res.render('user/userAccount', { user })
+}
+module.exports.getAddressForm = (req, res) => {
+  res.render('user/addAddress')
+}
+module.exports.addUserAddress = async (req, res) => {
+  console.log(req.body)
+  await User.updateOne({ _id: req.user.id }, { $push: { addresses: req.body } })
+  res.redirect('/useraccount')
 }
 
 module.exports.applycoupon_post = async (req, res) => {

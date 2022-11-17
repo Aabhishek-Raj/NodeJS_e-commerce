@@ -71,12 +71,12 @@ const ifAuth = (req, res, next) => {
 // ======================admin require auth ===>>
 
 const adminRequireAuth = (req, res, next) => {
-  const token = req.cookies.jwt
+  const token = req.cookies.jwtA
 
   // checking the existance of web token
 
   if (token) {
-    jwt.verify(token, 'there is a secret', (err, decodedToken) => {
+    jwt.verify(token, 'there is a admin secret', (err, decodedToken) => {
       if (err) {
         console.log(err.message)
         res.redirect('admin/adminlogin')
@@ -93,7 +93,7 @@ const adminRequireAuth = (req, res, next) => {
 // Checking current admin =======>>
 
 const checkAdmin = (req, res, next) => {
-  const token = req.cookies.jwt
+  const token = req.cookies.jwtA
 
   if (token) {
     jwt.verify(token, 'there is a admin secret', async (err, decodedToken) => {
@@ -112,6 +112,5 @@ const checkAdmin = (req, res, next) => {
     next()
   }
 }
-
 
 module.exports = { requireAuth, checkUser, ifAuth, adminRequireAuth, checkAdmin }

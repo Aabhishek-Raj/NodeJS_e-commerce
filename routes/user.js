@@ -48,6 +48,8 @@ router.get('/ordercancel/:id', productController.userOrderCancel_Get)
 router.get('/orderreturn/:id', productController.userOrderreturn_Get)
 
 router.get('/useraccount', productController.userAccount)
+router.get('/addaddressform', productController.getAddressForm)
+router.post('/addaddress', productController.addUserAddress)
 
 router.post('/applycoupon', productController.applycoupon_post)
 

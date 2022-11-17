@@ -115,7 +115,7 @@ module.exports.deleteCategory_get = async (req, res) => {
 }
 
 module.exports.orderManagement = async (req, res) => {
-  const allOrders = await Order.find({ $or: [{ orderstatus: 'placed' }, { orderstatus: 'Delivered' }, { orderstatus: 'Dispatched' }, { orderstatus: 'Return' }] })
+  const allOrders = await Order.find({ $or: [{ orderstatus: 'Placed' }, { orderstatus: 'Delivered' }, { orderstatus: 'Dispatched' }, { orderstatus: 'Return' }] })
   res.render('admin/orderManagement', { allOrders, layout: './layouts/adminLayout' })
 }
 

@@ -19324,7 +19324,7 @@ Pages - Contact
     color: red;
 }
 .image-box{
-    width: 260px;
-    height: 360px;
+    width: 100%;
+    height: 360px;      
 }
 
