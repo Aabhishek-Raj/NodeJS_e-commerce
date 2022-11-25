@@ -8,7 +8,6 @@ require('dotenv').config()
 const fetch = require('node-fetch')
 const Coupon = require('../models/couponSchema')
 const Admin = require('../models/adminSchema')
-const { log } = require('console')
 const base = 'https://api-m.sandbox.paypal.com'
 
 const instance = new Razorpay({
@@ -215,7 +214,11 @@ module.exports.checkoutPage_Get = async (req, res) => {
       }
     }
   ])
-  res.render('user/checkoutPage', { cartItems, user: user.addresses, carttotal: cart.total })
+  let carttotal = 0
+  if (cartItems > 0) {
+    carttotal = cart.total
+  }
+  res.render('user/checkoutPage', { cartItems, user: user.addresses, carttotal })
 }
 
 module.exports.checkoutPage_Post = async (req, res) => {
