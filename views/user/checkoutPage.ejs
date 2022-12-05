@@ -63,36 +63,41 @@
                             <h3>
                                 <i class="" aria-hidden="true"></i>
                                 Select an Address ?
-                                <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#existing_address"
-                                    aria-expanded="true">Click here</a>
-        
+                                <a class="Returning" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#existing_address" aria-expanded="true">Click here</a>
+
                             </h3>
                             <div id="existing_address" class="collapse checkout_coupon" data-parent="#checkout_coupon">
                                 <div class="checkout_info">
-                            
+
                                     <div class="panel-default">
-                            
-                                        <% user.forEach(user => { %>
+
+                                        <% user.forEach(user=> { %>
                                             <label class="checkbox-default" for="currencyCod" data-bs-toggle="collapse"
-                                            data-bs-target="#methodCod">
-                                            <input type="radio" id="currencyCod" name="existingHome" value="house: <%=user.house%>,street: <%=user.street%>,apartment: <%=user.apartment%>,city: <%=user.city%>,state: <%=user.state%>,pincode: <%=user.pincode%>,country: <%=user.country%>">
-                                        
-                                            <!-- <input type="hidden" id="currencyCod" name="existingStreet" value="<%=user.street%>">
+                                                data-bs-target="#methodCod">
+                                                <input type="radio" id="currencyCod" name="existingHome"
+                                                    value="house: <%=user.house%>,street: <%=user.street%>,apartment: <%=user.apartment%>,city: <%=user.city%>,state: <%=user.state%>,pincode: <%=user.pincode%>,country: <%=user.country%>">
+
+                                                <!-- <input type="hidden" id="currencyCod" name="existingStreet" value="<%=user.street%>">
                                             <input type="hidden" id="currencyCod" name="existingApartment" value="<%=user.apartment%>">
                                             <input type="hidden" id="currencyCod" name="existingCity" value="<%=user.city%>">
                                             <input type="hidden" id="currencyCod" name="existingState" value="<%=user.state%>">
                                             <input type="hidden" id="currencyCod" name="existingPin" value="<%=user.pincode%>">
                                             <input type="hidden" id="currencyCod" name="existingCountry" value="<%=user.country%>"> -->
-                                            <span style="font-weight:bolder;"><%=user.house %></span>
-                                        </label><br>
-            
-                                        <div id="methodCod" class="collapse" data-parent="#methodCod">
-                                            <div class="card-body1">
-                                                <p><%=user %></p>
+                                                <span style="font-weight:bolder;">
+                                                    <%=user.house %>
+                                                </span>
+                                            </label><br>
+
+                                            <div id="methodCod" class="collapse" data-parent="#methodCod">
+                                                <div class="card-body1">
+                                                    <p>
+                                                        <%=user %>
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <%}) %>
-                                        
+                                            <%}) %>
+
                                     </div>
                                 </div>
                             </div>
@@ -101,9 +106,9 @@
                             <h3>
                                 <i class="" aria-hidden="true"></i>
                                 Ship to new Address ?
-                                <a class="Returning" href="#" data-bs-toggle="collapse" data-bs-target="#checkout_coupon2"
-                                    aria-expanded="true">Click here</a>
-        
+                                <a class="Returning" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#checkout_coupon2" aria-expanded="true">Click here</a>
+
                             </h3>
                             <div id="checkout_coupon2" class="collapse checkout_coupon" data-parent="#checkout_coupon">
                                 <div class="row">
@@ -114,7 +119,7 @@
                                             <input type="text" name="housename">
                                         </div>
                                     </div>
-        
+
                                     <div class="col-12">
                                         <div class="default-form-box">
                                             <label>Street address <span>*</span></label>
@@ -124,7 +129,8 @@
                                     <div class="col-12">
                                         <div class="default-form-box">
                                             <label> Apartment<span>*</span></label>
-                                            <input placeholder="Apartment, suite, unit etc." type="text" name="apartment">
+                                            <input placeholder="Apartment, suite, unit etc." type="text"
+                                                name="apartment">
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -139,7 +145,7 @@
                                             <input type="text" name="state">
                                         </div>
                                     </div>
-        
+
                                     <div class="col-12">
                                         <div class="default-form-box">
                                             <label>Pin code<span>*</span></label>
@@ -175,14 +181,15 @@
                                             <input type="checkbox" id="newAccount">
                                             <span>Create an account?</span>
                                         </label>
-                                        <div id="newAccountPassword" class="collapse mt-3" data-parent="#newAccountPassword">
+                                        <div id="newAccountPassword" class="collapse mt-3"
+                                            data-parent="#newAccountPassword">
                                             <div class="card-body1 default-form-box">
                                                 <label> Account password <span>*</span></label>
                                                 <input placeholder="password" type="password" name="">
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-12 mt-3">
                                         <div class="order-notes">
                                             <label for="order_note">Order Notes</label>
@@ -191,14 +198,14 @@
                                                 name="notes"></textarea>
                                         </div>
                                     </div>
-        
+
                                 </div>
                             </div>
-                        </div>  
-                        
-                       
+                        </div>
 
-                        
+
+
+
 
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -256,7 +263,7 @@
                             </label>
 
                             <div id="methodCod" class="collapse" data-parent="#methodCod">
-            
+
                             </div>
                         </div>
                         <div class="panel-default">

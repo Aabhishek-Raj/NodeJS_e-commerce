@@ -215,9 +215,10 @@ module.exports.checkoutPage_Get = async (req, res) => {
     }
   ])
   let carttotal = 0
-  if (cartItems > 0) {
+  if (cartItems.length > 0) {
     carttotal = cart.total
   }
+  console.log(carttotal)
   res.render('user/checkoutPage', { cartItems, user: user.addresses, carttotal })
 }
 
